@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>吾村</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
+		<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.top{
+				height: 135px;
+				padding-top: 30px;
+				background: rgb(20,122,197);
+				text-align: center;
+			}
+			.top img{
+				width: 70px;
+				height: 70px;
+				border-radius: 50%;
+				display: block;
+				margin: 0 auto;
+			}
+			.top .t-name{
+				color: #FFF;
+			}
+			.top .t-name:after{
+				content: "（游客）";
+			}
+			
+			.main{
+				width: 100%;
+				margin-top: 5px;
+			}
+			.main .m-common{
+				width: 100%;
+				height: 40px;
+				line-height: 40px;
+				font-size: 16px;
+				padding-left: 10px;
+			}
+			.main .m-common button{
+				background: rgb(11,103,175);
+				color: #FFF;
+				border: 0;
+				border-radius: 5px;
+				height: 22px;
+				line-height: 22px;
+				width: 110px;
+				margin-left: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="top">
+			<img src="img/bar.png" />
+			<span class="t-name">微信名</span>
+		</div>
+		
+		
+		<div class="main">
+			
+			<div class="m-common" style="border-bottom: 1px solid black;">
+				村庄概况
+			</div>
+			<div class="m-common">
+				我是村民<button>点击注册认证</button>
+			</div>
+		</div>
+	</body>
+</html>

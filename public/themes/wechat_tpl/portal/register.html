@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>实名认证</title>
+		<meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+		<meta name="description" content="{$site_info.site_seo_description|default=''}">
+		<include file="public@head"/>
+		<link href="__TMPL__/public/assets/css/slippry/slippry.css" rel="stylesheet">
+    	<link href="__TMPL__/public/assets/css/slider.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
+		<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				padding: 0;
+				margin: 0;
+			}
+			.top{
+				width: 95%;
+				margin: 0 auto;
+				margin-top: 30px;
+			}
+			h5{
+				text-indent: 2em;
+			}
+			.top p{
+				color: darkgray;
+			}
+			
+			.info{
+				margin-top: 30px;
+			}
+			.info .info-img{
+				text-align: center;
+				margin-top: 30px;
+			}
+			.info .info-img img{
+				width: 70px;
+				height: 70px;
+				border-radius: 50%;
+			}
+			
+			.form{
+				width: 97%;
+				margin: 0 auto;
+				margin-top: 30px;
+				text-align: center;
+				margin-bottom: 75px;
+				font-size: 17px;
+			}
+			.info-common{
+				margin-bottom: 10px;
+			}
+			.info-common button{
+				background: #f0f0f0;
+				color: green;
+				font-size: 13px;
+				border: 2px solid green;
+				border-radius: 5px;
+				width: 80px;
+			}
+			.input-com{
+				border: 0;
+				border-bottom: 1px solid black;
+				width: 200px;
+				background: #f0f0f0;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="top">
+			<h5>
+				实名注册说明
+			</h5>
+			<p>
+				1、本注册只对本村村民开放，村民关注本村公众号才可提交认证，审核期间将无法修改姓名和手机号。
+			</p>
+			<p>
+				2、本村管理员将对提交注册信息进行审核，审核通过的村民将有权参加村内各事物等。
+			</p>
+			<p>
+				3、已认证的村民可在”我的--查看我的资料“选择是否公开手机号码，公开后本村村民可在”便民通讯录“查看
+			</p>
+		</div>
+		
+		
+		<div class="info">
+			<h5>
+				填写基本信息
+			</h5>
+			<div class="info-img">
+				<img src="__TMPL__/public/assets/images/bar.png" />
+				<div style="margin-top: 5px;color: gray;">上传/替换头像</div>
+			</div>
+		</div>
+		
+		<div class="form">
+			
+			<div class="info-common">
+				姓&nbsp;&nbsp;&nbsp;名：<input type="text" class="input-com" placeholder="请输入您的真实姓名"/>
+			</div>
+			<div class="info-common">
+				手机号：<input type="text" class="input-com" placeholder="请输入您的常用手机号码"/>
+			</div>
+			<div class="info-common">
+				验证码：<input type="text" class="input-com" style="width: 125px;" placeholder="请输入验证码"><button>获取验证码</button>
+			</div>
+			
+			
+		</div>
+		
+
+		<!-- 底部导航栏 -->
+		<include file="public@bottom"/>
+		<include file="public@scripts"/>
+		
+	</body>
+</html>

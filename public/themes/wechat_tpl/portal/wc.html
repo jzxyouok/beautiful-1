@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>吾村</title>
+		<meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+		<meta name="description" content="{$site_info.site_seo_description|default=''}">
+		<include file="public@head"/>
+		<link href="__TMPL__/public/assets/css/slippry/slippry.css" rel="stylesheet">
+    	<link href="__TMPL__/public/assets/css/slider.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
+		<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+			    padding: 0;
+			    background: #FFF;
+			}
+			.top .top-img{
+				width: 100%;
+			}
+			.nav{
+				width: 90%;
+				margin: 0 auto;
+				text-align: center;
+			}
+			.nav-common{
+				margin-top: 10px;
+				margin-bottom: 15px;
+			}
+			.weui-flex__item img{
+				width: 42px;
+				height: 42px;
+			}
+			
+			.mid{
+				height: 35px;
+				width: 100%;
+				background: #f6b37f;
+			}
+			
+			.bottom{
+				width: 100%;
+				margin-top: 10px;
+				margin-bottom: 70px;
+			}
+			.bottom .b-top{
+				color: darkorange;
+				text-align: center;
+				font-size: 20px;
+				border-top: 1px solid gray;
+				border-bottom: 1px solid gray;
+			}
+			.bottom .b-main{
+				height: 100px;
+				width: 90%;
+				margin: 0 auto;
+				margin-top: 10px;
+			}
+			.bottom .b-main .b-main-top{
+				height: 30px;
+				line-height: 30px;
+			}
+			.bottom .b-main .b-main-top .user-img{
+				width: 30px;
+				height: 30px;
+				float: left;
+			}
+			.bottom .b-main .b-main-top .user-img img{
+				border-radius: 50%;
+			}
+			.bottom .b-main .b-main-top .user-text{
+				height: 30px;
+				line-height: 44px;
+				color: darkorange;
+			}
+			.bottom .b-main .b-main-content{
+				color: darkorange;
+				word-break:break-all;
+			}
+			.weui-flex__item a{
+			    color: #000;
+			    text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!-- 顶部轮播图 -->
+		<include file="public@slider"/>
+		
+		<div class="nav weui-flex nav-common">
+			
+			<div class="weui-flex__item">
+				<a href="cwgk">
+					<img src="__TMPL__/public/assets/images/top1.jpg" />
+					<div>村务公开</div>
+				</a>
+			</div>
+			
+			<div class="weui-flex__item">
+				<a href="cwxx">
+					<img src="__TMPL__/public/assets/images/top2.jpg" />
+					<div>村委信箱</div>
+				</a>
+			</div>
+			
+			<div class="weui-flex__item">
+				<a href="bcgk">
+					<img src="__TMPL__/public/assets/images/top3.jpg" />
+					<div>本村概况</div>
+				</a>
+			</div>
+		</div>
+		
+		<div class="nav weui-flex nav-common">
+			
+			<div class="weui-flex__item">
+				<a href="wcxx">
+					<img src="__TMPL__/public/assets/images/top5.jpg" />
+					<div>吾村乡贤</div>
+				</a>
+			</div>
+			
+			<div class="weui-flex__item">
+				<a href="xckt">
+					<img src="__TMPL__/public/assets/images/top6.jpg" />
+					<div>乡村客厅</div>
+				</a>
+			</div>
+			
+			<div class="weui-flex__item">
+				<a href="#">
+					<img src="__TMPL__/public/assets/images/top7.jpg" />
+					<div>景点民宿</div>
+				</a>
+			</div>
+			
+			
+		</div>
+		
+
+
+		
+		<div class="mid">
+			
+		</div>
+		
+		
+		<div class="bottom">
+			<div class="b-top">
+				-村务公开-
+			</div>
+			<div class="b-main">
+				<div class="b-main-top">
+					<div class="user-img">
+						<img src="__TMPL__/public/assets/images/nav_1.png" alt="" width="30px" height="30px" />
+					</div>
+					<div class="user-text">村管理员</div>
+				</div>
+				<div class="b-main-content">
+					A村支持XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+				</div>
+			</div>
+			<div class="b-main">
+				<div class="b-main-top">
+					<div class="user-img">
+						<img src="__TMPL__/public/assets/images/nav_1.png" alt="" width="30px" height="30px" />
+					</div>
+					<div class="user-text">村管理员</div>
+				</div>
+				<div class="b-main-content">
+					A村支持XXXXXXXXXXXXXXX23145XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX112233
+				</div>
+			</div>
+			
+		</div>
+		
+		
+		<!-- 底部导航栏 -->
+		<include file="public@bottom"/>
+
+
+		<include file="public@scripts"/>
+		<script src="__TMPL__/public/assets/js/slippry.min.js"></script>
+		<script>
+		    $(function () {
+		        $("#home-slider").slippry({
+		            transition: 'fade',
+		            useCSS: true,
+		            captions: false,
+		            speed: 1000,
+		            pause: 3000,
+		            auto: true,
+		            preload: 'visible'
+		        });
+		        $("#home-slider").show();
+		    });
+		</script>
+	
+		
+	</body>
+</html>

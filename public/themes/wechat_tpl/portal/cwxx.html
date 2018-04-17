@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>村委信箱</title>
+		<meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+		<meta name="description" content="{$site_info.site_seo_description|default=''}">
+		<include file="public@head"/>
+		<link href="__TMPL__/public/assets/css/slippry/slippry.css" rel="stylesheet">
+    	<link href="__TMPL__/public/assets/css/slider.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
+		<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+			    padding: 0;
+			    background: #FFF;
+			}
+			.table{
+				width: 300px;
+				margin: 0 auto;
+				margin-top: 50px;
+			}
+			.table table{
+				width: 300px;
+			}
+			.table table tr{
+				width: 400px;
+			}
+			.table table tr td{
+				text-align: center;
+			}
+			.table table tr td button{
+				margin: 5px 20px;
+				width: 70px;
+				background: gray;
+				border-radius: 5px;
+			}
+			.table table tr td .input-com{
+				border: 0;
+			}
+			.table table tr td .user-com{
+				width: 90px;
+				border-bottom: 1px solid black;
+				margin: 3px 0;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 顶部轮播图 -->
+		<include file="public@slider"/>
+		
+		<div class="main">
+			<div class="table weui-flex">
+				<table border="1" cellspacing="0" cellpadding="0">
+					<tr><td style="box-sizing: inherit;">发信人</td><td>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text" class="input-com user-com"/><br />联系电话：<input type="text" class="input-com user-com"/></td></tr>
+					<tr><td>主题</td><td><input type="text"  class="input-com" style="width: 256px;"/></td></tr>
+					<tr><td colspan="2"><textarea placeholder="请输入..." class="input-com" style="width: 300px;margin-top: 5px;height: 140px;"></textarea></td></tr>
+					<tr><td colspan="2"><button>提交</button><button>重置</button></td></tr>
+				</table>
+			</div>
+		</div>
+		
+		<!-- 底部导航栏 -->
+		<include file="public@bottom"/>
+
+
+		<include file="public@scripts"/>
+		<script src="__TMPL__/public/assets/js/slippry.min.js"></script>
+		<script>
+		    $(function () {
+		        $("#home-slider").slippry({
+		            transition: 'fade',
+		            useCSS: true,
+		            captions: false,
+		            speed: 1000,
+		            pause: 3000,
+		            auto: true,
+		            preload: 'visible'
+		        });
+		        $("#home-slider").show();
+		    });
+		</script>
+	</body>
+</html>

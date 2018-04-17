@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>首页 {$site_info.site_name|default=''}</title>
+    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <include file="public@head"/>
+    <link href="__TMPL__/public/assets/css/slippry/slippry.css" rel="stylesheet">
+    <link href="__TMPL__/public/assets/css/slider.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
+    <script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding: 0;
+            background: #FFF;
+        }
+        .nav{
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 15px;
+        }
+        .nav-common{
+            margin-bottom: 15px;
+        }
+        .weui-flex__item img{
+            width: 42px;
+            height: 42px;
+        }
+        
+        .mid{
+            height: 35px;
+            width: 100%;
+            background: #f6b37f;
+        }
+        
+        .bottom{
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 70px;
+        }
+        .bottom .b-top{
+            color: darkorange;
+            text-align: center;
+            font-size: 20px;
+            border-top: 1px solid gray;
+            border-bottom: 1px solid gray;
+        }
+        
+        
+        .main{
+            width: 100%;
+            border-bottom: 2px solid gray;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+        .main .m-contant{
+            width: 90%;
+            margin: 0 auto;
+        }
+        .main .m-contant .c-user{
+            height: 40px;
+            line-height: 40px;
+            color: gray;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .main .m-contant .c-user img{
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .main .m-contant .c-text{
+            word-break:break-all;
+            color: gray;
+            padding-bottom: 10px;
+        }
+        
+        .weui-flex__item a{
+            color: #000;
+            text-decoration: none;
+        }
+
+    </style>
+    <hook name="before_head_end"/>
+</head>
+<body>
+
+    <!-- 顶部轮播图 -->
+    <include file="public@slider"/>
+
+
+    <!-- 中间导航部分 -->
+    <div class="nav weui-flex nav-common">
+        <div class="weui-flex__item">
+            <a href="__ROOT__">
+                <img src="__TMPL__/public/assets/images/top1.jpg" />
+                <div>乡村动态</div>
+            </a>
+        </div>
+        <div class="weui-flex__item">
+            <a href="#">
+                <img src="__TMPL__/public/assets/images/top2.jpg" />
+                <div>美丽乡村</div>
+            </a>
+        </div>
+        <div class="weui-flex__item">
+            <a href="portal/index/xcms">
+                <img src="__TMPL__/public/assets/images/top3.jpg" />
+                <div>乡村美宿</div>
+            </a>
+        </div>
+        <div class="weui-flex__item">
+            <a href="#">
+                <img src="__TMPL__/public/assets/images/top4.jpg" />
+                <div>设置</div>
+            </a>
+        </div>
+    </div>
+    
+    <div class="nav weui-flex nav-common">
+        <div class="weui-flex__item">
+            <a href="portal/index/xccw">
+                <img src="__TMPL__/public/assets/images/top5.jpg" />
+                <div>乡村村务</div>
+            </a>
+        </div>
+        <div class="weui-flex__item">
+            <a href="portal/index/xckt">
+                <img src="__TMPL__/public/assets/images/top6.jpg" />
+                <div>乡村客厅</div>
+            </a>
+        </div>
+        <div class="weui-flex__item">
+            <a href="#">
+                <img src="__TMPL__/public/assets/images/top7.jpg" />
+                <div>绝美路线</div>
+            </a>
+        </div>
+        <div class="weui-flex__item">
+            <a href="portal/index/wc">
+                <img src="__TMPL__/public/assets/images/top8.jpg" />
+                <div>吾村</div>
+            </a>
+        </div>
+    </div>
+    
+    <div class="nav weui-flex nav-common">
+        <div class="weui-flex__item">
+            <a href="portal/index/xcgs">
+                <img src="__TMPL__/public/assets/images/top9.jpg" />
+                <div>乡村故事</div>
+            </a>
+        </div>
+        <div class="weui-flex__item">
+            <a href="#">
+                <img src="__TMPL__/public/assets/images/top10.jpg" />
+                <div>中外乡村</div>
+            </a>
+        </div>
+        <div class="weui-flex__item">
+            <a href="#">
+                <img src="__TMPL__/public/assets/images/top11.jpg" />
+                <div>乡村沙龙</div>
+            </a>
+        </div>
+        <div class="weui-flex__item">
+            <a href="#">
+                <img src="__TMPL__/public/assets/images/top12.jpg" />
+                <div>设计乡村</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- 中间空余部分 -->
+    <div class="mid">
+    </div>
+
+    <!-- 底部部分 -->
+    <div class="bottom">
+        <div class="b-top">
+            -乡村动态-
+        </div>
+        
+        <div class="main">
+            <div class="m-contant">
+                <div class="c-user">
+                    <img src="__TMPL__/public/assets/images/bar.png" width="40px" height="40px" />张三
+                </div>
+                <div class="c-text">
+                    党的十六大提出加qwXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXSS<img src="__TMPL__/public/assets/images/bar.png" width="80%" />
+                </div>
+            </div>
+        </div>
+        
+        <div class="main">
+            <div class="m-contant">
+                <div class="c-user">
+                    <img src="__TMPL__/public/assets/images/bar.png" width="40px" height="40px" />张三
+                </div>
+                <div class="c-text">
+                    党的十六大提出加qwXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXSS<img src="__TMPL__/public/assets/images/bar.png" width="80%" />
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- 底部导航栏 -->
+    <include file="public@bottom"/>
+
+<include file="public@scripts"/>
+<script src="__TMPL__/public/assets/js/slippry.min.js"></script>
+<script>
+    $(function () {
+        $("#home-slider").slippry({
+            transition: 'fade',
+            useCSS: true,
+            captions: false,
+            speed: 1000,
+            pause: 3000,
+            auto: true,
+            preload: 'visible'
+        });
+        $("#home-slider").show();
+    });
+</script>
+<hook name="before_body_end"/>
+</body>
+</html>

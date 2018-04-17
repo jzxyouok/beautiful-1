@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>乡村客厅</title>
+		<meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+		<meta name="description" content="{$site_info.site_seo_description|default=''}">
+		<include file="public@head"/>
+		<link href="__TMPL__/public/assets/css/slippry/slippry.css" rel="stylesheet">
+    	<link href="__TMPL__/public/assets/css/slider.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
+		<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+			    padding: 0;
+			    background: #FFF;
+			}
+			.search{
+				width: 95%;
+				margin: 10px auto;
+			}
+			
+			.video{
+				width: 80%;
+				height: 200px;
+				margin: 0 auto;
+			}
+			
+			.wonderful{
+				width: 98%;
+				margin: 0 auto;
+				margin-top: 20px;
+			}
+			.wonderful .w-tittle{
+				text-align: center;
+				height: 30px;
+				line-height: 30px;
+			}
+			.wonderful img{
+				width: 98%;
+				height: 80px;
+			}
+			.wonderful .weui-flex__item{
+				text-align: center;
+			}
+			
+			.foot{
+				width: 98%;
+				margin: 0 auto;
+				margin-top: 30px;
+				height: 200px;
+				margin-bottom: 70px;
+			}
+			.foot .weui-flex__item{
+				height: 100px;
+				line-height: 100px;
+				font-size: 12px;
+			}
+			.foot .weui-flex__item img{
+				width: 50px;
+				height: 50px;
+				margin-right: 2px;
+			}
+			.foot .weui-flex__item p{
+				line-height: 14px;
+				word-break: break-all;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!-- 顶部轮播图 -->
+		<include file="public@slider"/>
+		
+		<div class="search">
+			<form class="weui-search-bar__form">
+	        	<div class="weui-search-bar__box">
+		            <i class="weui-icon-search"></i>
+		            <input type="search" class="weui-search-bar__input" id="search_input" placeholder="搜索" />
+		            <a href="javascript:" class="weui-icon-clear" id="search_clear"></a>
+        		</div>
+    		</form>
+		</div>
+		
+		<div class="video">
+			<img src="__TMPL__/public/assets/images/bar.png" width="100%" height="200px"/>
+		</div>
+			
+		<div class="wonderful">
+			
+			<div class="w-tittle">
+				会客厅精选
+			</div>
+			<div class="weui-flex">
+				<div class="weui-flex__item">
+					<img src="__TMPL__/public/assets/images/bar.png" />
+					桐庐|石舍
+				</div>
+				<div class="weui-flex__item">
+					<img src="__TMPL__/public/assets/images/bar.png" />
+					XX|XX
+				</div>
+				<div class="weui-flex__item">
+					<img src="__TMPL__/public/assets/images/bar.png" />
+					XX|XX
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="foot">
+			<div class="weui-flex">
+				<div class="weui-flex__item">
+					<img src="__TMPL__/public/assets/images/bar.png" />
+					书宿联盟
+					<p>
+						书宿众筹|大理XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+					</p>
+				</div>
+				
+				<div class="weui-flex__item">
+					<img src="__TMPL__/public/assets/images/bar.png" />
+					书宿联盟
+					<p>
+						故山秋XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+					</p>
+				</div>
+				
+				<div class="weui-flex__item">
+					<img src="__TMPL__/public/assets/images/bar.png" />
+					书宿联盟
+					<p>
+						1月8日-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+					</p>
+				</div>
+			</div>
+		</div>
+
+	    <!-- 底部导航栏 -->
+	    <include file="public@bottom"/>
+
+		<include file="public@scripts"/>
+		<script src="__TMPL__/public/assets/js/slippry.min.js"></script>
+		<script>
+		    $(function () {
+		        $("#home-slider").slippry({
+		            transition: 'fade',
+		            useCSS: true,
+		            captions: false,
+		            speed: 1000,
+		            pause: 3000,
+		            auto: true,
+		            preload: 'visible'
+		        });
+		        $("#home-slider").show();
+		    });
+		</script>
+
+	</body>
+</html>

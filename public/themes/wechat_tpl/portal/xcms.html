@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>乡村美宿</title>
+		<meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+		<meta name="description" content="{$site_info.site_seo_description|default=''}">
+		<include file="public@head"/>
+		<link href="__TMPL__/public/assets/css/slippry/slippry.css" rel="stylesheet">
+    	<link href="__TMPL__/public/assets/css/slider.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
+		<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		
+		<style>
+			.{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+			    padding: 0;
+			    background: #FFF;
+			}
+			.search{
+				width: 95%;
+				margin: 10px auto;
+			}
+
+			.house{
+				width: 95%;
+				margin: 0 auto;
+				margin-top: 5px;
+			}
+			.house .mid-left,.mid-right{
+				height: 115px;
+			}
+			.house .mid-left{
+				background: url('__TMPL__/public/assets/images/bar.png');
+				background-repeat:no-repeat;
+				background-size:100% 100%;
+				margin-right: 5px;
+			}
+			.house .mid-right{
+				background: url('__TMPL__/public/assets/images/bar.png');
+				background-repeat:no-repeat;
+				background-size:100% 100%;
+			}
+			.h-tittle{
+				text-align: center;
+				font-size: 18px;
+				font-weight: bold;
+			}
+			.house img{
+				width: 97%;
+			}
+			.house span{
+				font-size: 12px;
+			}
+			.house .h-money{
+				float: right;
+				color: #eb6300;
+				margin-top: 3px;
+			}
+			.house .h-money:before{
+				content: "￥";
+			}
+			.house .h-money:after{
+				content: "起";
+			}
+			.house .mid-tittle{
+				color: #FFF;
+				margin-top: 85px;
+				margin-left: 20px;
+				float: left;width: 60px;
+			}
+
+			.history{
+				width: 95%;
+				margin: 0 auto;
+				margin-top: 10px;
+				margin-bottom: 70px;
+			}
+			.history .h-main{
+				width: 100%;
+				height: 100px;
+			}
+			.history .h-main img{
+				display: block;
+				width: 30%;
+				height: 100px;
+				float: left;
+				margin-top: 10px;
+			}
+			.history .h-main .his-content{
+				width: 65%;
+				float: left;
+				margin-left: 10px;
+				margin-top: 5px;
+			}
+			.history .h-main .his-content h5{
+				font-size: 12px;
+				font-weight: bold;
+				
+			}
+			.history .h-main .his-content p{
+				word-break: break-all;
+				color: #6d6d6d;
+				font-size: 12px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!-- 顶部轮播图 -->
+		<include file="public@slider"/>
+
+
+		<div class="search">
+			<form class="weui-search-bar__form">
+	        	<div class="weui-search-bar__box">
+		            <i class="weui-icon-search"></i>
+		            <input type="search" class="weui-search-bar__input" id="search_input" placeholder="搜索" />
+		            <a href="javascript:" class="weui-icon-clear" id="search_clear"></a>
+        		</div>
+    		</form>
+		</div>
+		
+		
+		
+		<div class="house weui-flex">
+			<div class="mid-left weui-flex__item">
+				<div class="mid-tittle">
+					轻奢民宿
+				</div>
+				<div class="h-money" style="margin-top: 85px;">
+					1200
+				</div>
+			</div>
+			<div class="mid-right weui-flex__item">
+				<div class="mid-tittle">
+					轻奢民宿
+				</div>
+				<div class="h-money" style="margin-top: 85px;">
+					1200
+				</div>
+			</div>
+		</div>
+		
+		<div class="house">
+			<div class="h-tittle">
+				首推房源
+			</div>
+			<div class="weui-flex">
+				<div class="weui-flex__item">
+					<img src="__TMPL__/public/assets/images/home.png" />
+					<span class="h-name">杭州栖隐客栈西湖灵隐店</span><span class="h-money">300</span>
+				</div>
+				<div class="weui-flex__item">
+					<img src="__TMPL__/public/assets/images/home.png" />
+					<span class="h-name">杭州栖隐客栈西湖灵隐店</span><span class="h-money">300</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="history">
+			<div class="h-tittle">
+				美宿故事
+			</div>
+			<div class="h-main">
+				<img src="__TMPL__/public/assets/images/story.png" />
+				<div class="his-content">
+					<h5>
+						当代时髦青年最爱的 ins风民宿TOP3
+					</h5>
+					<p>摄影、ins风、美食XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXs</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- 底部导航栏 -->
+		<include file="public@bottom"/>
+
+
+		<include file="public@scripts"/>
+		<script src="__TMPL__/public/assets/js/slippry.min.js"></script>
+		<script>
+		    $(function () {
+		        $("#home-slider").slippry({
+		            transition: 'fade',
+		            useCSS: true,
+		            captions: false,
+		            speed: 1000,
+		            pause: 3000,
+		            auto: true,
+		            preload: 'visible'
+		        });
+		        $("#home-slider").show();
+		    });
+		</script>
+	</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>村务公开</title>
+		<meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+		<meta name="description" content="{$site_info.site_seo_description|default=''}">
+		<include file="public@head"/>
+		<link href="__TMPL__/public/assets/css/slippry/slippry.css" rel="stylesheet">
+    	<link href="__TMPL__/public/assets/css/slider.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
+		<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		
+		
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+			    padding: 0;
+			    background: #FFF;
+			}
+			.mid{
+				width: 100%;
+				height: 70px;
+				border-bottom: 2px solid darkorange;
+				margin-bottom: 10px;
+				margin-top: 10px;
+			}
+			.mid form{
+				width: 90%;
+				margin: 0 auto;
+			}
+			.mid .mid-nav{
+				width: 60%;
+				margin: 0 auto;
+				line-height: 40px;
+				font-size: 17px;
+				font-weight: bold;
+				color: gray;
+			}
+			.mid .mid-nav .nav-left{
+				float: left;
+			}
+			.mid .mid-nav .nav-right{
+				float: right;
+			}
+			.content{
+				margin-bottom: 70px;
+			}
+			.main{
+				width: 100%;
+				border-bottom: 2px solid gray;
+				display: flex;
+				flex-direction: column;
+				margin-bottom: 10px;
+			}
+			.main .m-contant{
+				width: 90%;
+				margin: 0 auto;
+			}
+			.main .m-contant .c-user{
+				height: 40px;
+				line-height: 40px;
+				color: gray;
+				font-size: 20px;
+				margin-bottom: 10px;
+			}
+			.main .m-contant .c-user img{
+				border-radius: 50%;
+			}
+			.main .m-contant .c-text{
+				word-break:break-all;
+				color: gray;
+				padding-bottom: 10px;
+			}
+		</style>
+	</head>
+	<body>
+	
+		<!-- 顶部轮播图 -->
+		<include file="public@slider"/>
+		
+		
+		<div class="mid">
+			<form class="weui-search-bar__form">
+	        	<div class="weui-search-bar__box">
+		            <i class="weui-icon-search"></i>
+		            <input type="search" class="weui-search-bar__input" id="search_input" placeholder="搜索" />
+		            <a href="javascript:" class="weui-icon-clear" id="search_clear"></a>
+        		</div>
+    		</form>
+    		<div class="mid-nav">
+    			<div class="nav-left">
+    				村务公开
+    			</div>
+    			<div class="nav-right">
+    				办事指南
+    			</div>
+    		</div>
+		</div>
+		
+		<div class="content">
+			<div class="main">
+				<div class="m-contant">
+					<div class="c-user">
+						<img src="__TMPL__/public/assets/images/bar.png" width="40px" height="40px" />张三
+					</div>
+					<div class="c-text">
+						党的十六大提出加qwXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXSS<img src="__TMPL__/public/assets/images/bar.png" width="100%"/>
+					</div>
+				</div>
+			</div>
+			<div class="main">
+				<div class="m-contant">
+					<div class="c-user">
+						<img src="__TMPL__/public/assets/images/bar.png" width="40px" height="40px" />张三
+					</div>
+					<div class="c-text">
+						党的十六大提出加qwXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXSS<img src="__TMPL__/public/assets/images/bar.png" width="100%"/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+
+		<!-- 底部导航栏 -->
+		<include file="public@bottom"/>
+
+
+		<include file="public@scripts"/>
+		<script src="__TMPL__/public/assets/js/slippry.min.js"></script>
+		<script>
+		    $(function () {
+		        $("#home-slider").slippry({
+		            transition: 'fade',
+		            useCSS: true,
+		            captions: false,
+		            speed: 1000,
+		            pause: 3000,
+		            auto: true,
+		            preload: 'visible'
+		        });
+		        $("#home-slider").show();
+		    });
+		</script>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+<ul id="home-slider" class="list-unstyled">
+    <php>
+        $top_slide_id=empty($theme_vars['top_slide'])?1:$theme_vars['top_slide'];
+    </php>
+    <slides id="$top_slide_id">
+        <li>
+            <div class="caption-wraper">
+                <div class="caption">{$vo.title|default=''}</div>
+            </div>
+            <a href="{$vo.url|default=''}"><img src="{:cmf_get_image_url($vo.image)}" alt=""></a>
+        </li>
+    </slides>
+</ul>
