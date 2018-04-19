@@ -29,7 +29,12 @@ class AuthController extends HomeBaseController
         $code = rand(pow(10,(4-1)), pow(10,4)-1);
         $text = '【美丽乡村】您的验证码是'.$code;
         CodeModel::creatCode($phone, $code);
-        sendSms($phone, $text);
+        $res = sendSms($phone, $text);
+        if($res['code'] == 0){
+            $this->success('发送成功');
+        }else{
+            $this->err('发送失败');
+        }
     }
 
 
