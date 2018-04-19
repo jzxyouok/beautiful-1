@@ -135,7 +135,7 @@
 		    <div class="weui-mask"></div>
 		    <div class="weui-dialog">
 		        <div class="weui-dialog__hd"><strong class="weui-dialog__title">提示</strong></div>
-		        <div class="weui-dialog__bd">手机号不能为空</div>
+		        <div class="weui-dialog__bd" id="alert_info">手机号不能为空</div>
 		        <div class="weui-dialog__ft">
 		            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary" id="close">确定</a>
 		        </div>
@@ -159,13 +159,17 @@
 						'dataType': 'json',
 						'success': function (data){
 							if(data.status == 1){
+								document.getElementById("alert_info").innerText = '验证码发送成功';
+								document.getElementById("alert").style.display='block';
 								new invokeSettime("#btn");
 							}else{
-
+								document.getElementById("alert_info").innerText = '请输入正确的手机号';
+								document.getElementById("alert").style.display='block';
 							}
 						}
 					});
 				}else{
+					document.getElementById("alert_info").innerText = '手机号不能为空';
 					document.getElementById("alert").style.display='block';
 				}
 			}
