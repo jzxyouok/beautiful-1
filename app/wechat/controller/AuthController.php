@@ -48,8 +48,12 @@ class AuthController extends HomeBaseController
         $cd = new CodeModel();
         $realCode = $cd->where('phone', $phone)->find();
         if ($code == $realCode) {
-            UserModel::userAuth($openid, $name, $phone, $village);
-            $this->success('验证成功');
+            if($openid != '' && $phone != '' && $code != '' && $village != '' && $name != ''){
+                    UserModel::userAuth($openid, $name, $phone, $village);
+                    $this->success('验证成功');
+                }else{
+                    $this->error('验证失败');
+                }
         }else{
             $this->error('验证失败');
         }
