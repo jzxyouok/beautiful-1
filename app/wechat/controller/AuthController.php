@@ -22,9 +22,9 @@ require 'sms.php';
 class AuthController extends HomeBaseController
 {
     protected $table = 'cmf_code';
-    $request = request();
 
     public function sendCode(){
+        $request = request();
         $phone = $request->post('phone');
         $code = rand(pow(10,(4-1)), pow(10,4)-1);
         $text = '【美丽乡村】您的验证码是'.$code;
@@ -34,6 +34,7 @@ class AuthController extends HomeBaseController
 
 
     public function checkCode(){
+        $request = request();
         $phone = $request->post('phone');
         $code = $request->post('code');
         $name = $request->post('name');
