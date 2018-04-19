@@ -24,7 +24,6 @@
 			.text{
 				width: 95%;
 				margin: 0 auto;
-				margin-top: 30px;
 			}
 			.text h5{
 				text-indent: 2em;
@@ -38,7 +37,6 @@
 			}
 			.info .info-img{
 				text-align: center;
-				margin-top: 30px;
 			}
 			.info .info-img img{
 				width: 70px;
@@ -125,23 +123,23 @@
 		
 		<script type="text/javascript">
 			var phone = document.getElementById("phone").value;
-			$.ajax({
-				'url': 'http://tp.musiiot.top/wechat/AuthController/sendCode',
-				'method': 'POST',
-				'data': {
-					'phone': phone
-				},
-				'dataType': 'json'
-				'success': function(data){
-					if(data.status == 200){
-						document.getElementById("btn").onclick = function (){
+			document.getElementById("btn").onclick = function (){
+				$.ajax({
+					'url': 'http://tp.musiiot.top/wechat/AuthController/sendCode',
+					'method': 'POST',
+					'data': {
+						'phone': phone
+					},
+					'dataType': 'json'
+					'success': function(data){
+						if(data.status == 200){
 							new invokeSettime("#btn");
-						}
-					}else{
+						}else{
 
+						}
 					}
-				}
-			});
+				});
+			}
 			function invokeSettime(obj){
 			    var countdown=60;
 			    settime(obj);
