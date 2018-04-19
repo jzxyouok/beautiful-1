@@ -17,7 +17,7 @@ class CodeModel extends Model
         $cd->data([
               'phone' => $phone,
               'code' => $code,
-              'time' => ''
+              'time' => '2018/04/20 01:29:30'
         ]);
         $cd->save();
       }
