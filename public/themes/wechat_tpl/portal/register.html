@@ -139,7 +139,7 @@
 				var phone = document.getElementById("phone").value;
 				if(phone != ''){
 					$.ajax({
-						'url': 'http://tp.musiiot.top/wechat/AuthController/sendCode',
+						'url': 'http://tp.musiiot.top/wechat/Auth/sendCode',
 						'method': 'POST',
 						'data': {
 							'phone': phone
