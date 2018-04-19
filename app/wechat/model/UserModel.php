@@ -14,7 +14,8 @@ class UserModel extends Model
 
       /* 定义添加用户方法 */
 	public static function addUser($openid, $nick_name, $user_img){
-		$this->data([
+            $user = new UserModel();
+		$user->data([
                   'id' => '',
                   'openid' => $openid,
                   'authority' => '',
@@ -26,12 +27,13 @@ class UserModel extends Model
                   'village' => '',
                   'is_real' => ''
 		]);
-		$this->save();
+		$user->save();
 	}
 
       /* 定义用户验证方法 */
       public static function userAuth($openid, $name, $phone, $village){
-            $this->save([
+            $user = new UserModel();
+            $user->save([
                 'real_name' => $name,
                 'phone'     => $phone,
                 'village'   => $village
