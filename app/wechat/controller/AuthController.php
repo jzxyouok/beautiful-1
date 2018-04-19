@@ -33,7 +33,7 @@ class AuthController extends HomeBaseController
         if($res['code'] == 0){
             $this->success('发送成功');
         }else{
-            $this->err('发送失败');
+            $this->error('发送失败');
         }
     }
 
@@ -51,7 +51,7 @@ class AuthController extends HomeBaseController
             UserModel::userAuth($openid, $name, $phone, $village);
             $this->success('验证成功');
         }else{
-            $this->err('验证失败');
+            $this->error('验证失败');
         }
     }
 
