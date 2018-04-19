@@ -11,6 +11,7 @@
 namespace app\portal\controller;
 
 use cmf\controller\HomeBaseController;
+use app\wechat\model\UserModel;
 
 class IndexController extends HomeBaseController
 {
@@ -42,7 +43,12 @@ class IndexController extends HomeBaseController
     //吾村
     public function wc()
     {
-    	return $this->fetch(':wc');
+        $openid = session('openid', '', 'wechat');
+        if(UserModel::get(['openid' => $openid])['is_real']){
+            return $this->fetch(':wc');
+        }else{
+            return $this->fetch(':register');
+        }
     }
 
     //真物
