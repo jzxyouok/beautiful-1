@@ -116,6 +116,19 @@
 			</form>
 			
 		</div>
+
+
+
+		<div style="display: none;" id="alert">
+		    <div class="weui-mask"></div>
+		    <div class="weui-dialog">
+		        <div class="weui-dialog__hd"><strong class="weui-dialog__title">提示</strong></div>
+		        <div class="weui-dialog__bd">手机号不能为空</div>
+		        <div class="weui-dialog__ft">
+		            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确定</a>
+		        </div>
+		    </div>
+		</div>
 		
 		<!-- 底部导航栏 -->
 		<include file="public@bottom"/>
@@ -124,21 +137,25 @@
 		<script type="text/javascript">
 			var phone = document.getElementById("phone").value;
 			document.getElementById("btn").onclick = function (){
-				$.ajax({
-					'url': 'http://tp.musiiot.top/wechat/AuthController/sendCode',
-					'method': 'POST',
-					'data': {
-						'phone': phone
-					},
-					'dataType': 'json'
-					'success': function(data){
-						if(data.status == 200){
-							new invokeSettime("#btn");
-						}else{
+				if(phone != ''){
+					$.ajax({
+						'url': 'http://tp.musiiot.top/wechat/AuthController/sendCode',
+						'method': 'POST',
+						'data': {
+							'phone': phone
+						},
+						'dataType': 'json'
+						'success': function(data){
+							if(data.status == 200){
+								new invokeSettime("#btn");
+							}else{
 
+							}
 						}
-					}
-				});
+					});
+				}else{
+					document.getElementById("alert").style.display='block';
+				}
 			}
 			function invokeSettime(obj){
 			    var countdown=60;
