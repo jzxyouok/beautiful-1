@@ -11,6 +11,7 @@
 namespace app\wechat\controller;
 
 use think\Validate;
+use think\Request;
 use cmf\controller\HomeBaseController;
 use app\wechat\model\CodeModel;
 use app\wechat\model\UserModel;
