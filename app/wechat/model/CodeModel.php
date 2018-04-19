@@ -12,7 +12,7 @@ class CodeModel extends Model
 {
 	protected $table = 'cmf_code';
 
-	public function creatCode($phone, $code){
+	public static function creatCode($phone, $code){
             $this->data([
                   'phone' => $phone,
                   'code' => $code,
