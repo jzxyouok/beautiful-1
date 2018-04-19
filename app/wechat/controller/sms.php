@@ -38,7 +38,6 @@ function sendSms($mobile, $text){
     {
         //echo '操作完成没有任何错误';
     }
-    checkErr($result,$error);
     $json_data = $result;
     $array = json_decode($json_data,true);
     return $array;
