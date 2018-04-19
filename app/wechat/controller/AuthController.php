@@ -20,6 +20,7 @@ require 'sms.php';
 
 class AuthController extends HomeBaseController
 {
+    protected $table = 'cmf_code';
 
     public function sendCode(){
         $phone = $request->post('phone');

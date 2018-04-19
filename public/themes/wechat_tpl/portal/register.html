@@ -21,15 +21,15 @@
 				padding: 0;
 				margin: 0;
 			}
-			.top{
+			.text{
 				width: 95%;
 				margin: 0 auto;
 				margin-top: 30px;
 			}
-			h5{
+			.text h5{
 				text-indent: 2em;
 			}
-			.top p{
+			.text p{
 				color: darkgray;
 			}
 			
@@ -63,7 +63,7 @@
 				font-size: 13px;
 				border: 2px solid green;
 				border-radius: 5px;
-				width: 80px;
+				width: 110px;
 			}
 			.input-com{
 				border: 0;
@@ -75,7 +75,7 @@
 	</head>
 	<body>
 		
-		<div class="top">
+		<div class="text">
 			<h5>
 				实名注册说明
 			</h5>
@@ -102,7 +102,7 @@
 		</div>
 		
 		<div class="form">
-			<form class="js-ajax-form" action="你的提交地址" method="post">
+			<form class="js-ajax-form" action="http://tp.musiiot.top/wechat/AuthController/checkCode" method="post">
 				<div class="info-common">
 					姓&nbsp;&nbsp;&nbsp;名：<input type="text" class="input-com" placeholder="请输入您的真实姓名" name="name" />
 				</div>
@@ -113,32 +113,54 @@
 					手机号：<input type="text" class="input-com" placeholder="请输入您的常用手机号码" name="phone" id="phone" />
 				</div>
 				<div class="info-common">
-					验证码：<input type="text" class="input-com" style="width: 125px;" placeholder="请输入验证码" name="code"><button>获取验证码</button>
+					验证码：<input type="text" class="input-com" style="width: 125px;" placeholder="请输入验证码" name="code"><button  id="btn" type="button">获取验证码</button>
 				</div>
 			</form>
 			
 		</div>
 		
-
 		<!-- 底部导航栏 -->
 		<include file="public@bottom"/>
 		<include file="public@scripts"/>
 		
-
 		<script type="text/javascript">
 			var phone = document.getElementById("phone").value;
 			$.ajax({
-				'url': '',
+				'url': 'http://tp.musiiot.top/wechat/AuthController/sendCode',
 				'method': 'POST',
 				'data': {
 					'phone': phone
 				},
 				'dataType': 'json'
 				'success': function(data){
+					if(data.status == 200){
+						document.getElementById("btn").onclick = function (){
+							new invokeSettime("#btn");
+						}
+					}else{
 
+					}
 				}
-			})
-
+			});
+			function invokeSettime(obj){
+			    var countdown=60;
+			    settime(obj);
+			    function settime(obj) {
+			        if (countdown == 0) {
+			            $(obj).attr("disabled",false);
+			            $(obj).text("获取验证码");
+			            countdown = 60;
+			            return;
+			        } else {
+			            $(obj).attr("disabled",true);
+			            $(obj).text("(" + countdown + ") s 重新发送");
+			            countdown--;
+			        }
+			        setTimeout(function() {
+			                    settime(obj) }
+			                ,1000)
+			    }
+			}
 		</script>
 
 
