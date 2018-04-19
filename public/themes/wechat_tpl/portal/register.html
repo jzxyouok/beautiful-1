@@ -135,8 +135,8 @@
 		<include file="public@scripts"/>
 		
 		<script type="text/javascript">
-			var phone = document.getElementById("phone").value;
 			document.getElementById("btn").onclick = function (){
+				var phone = document.getElementById("phone").value;
 				if(phone != ''){
 					$.ajax({
 						'url': 'http://tp.musiiot.top/wechat/AuthController/sendCode',
