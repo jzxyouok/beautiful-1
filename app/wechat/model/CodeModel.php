@@ -28,8 +28,6 @@ class CodeModel extends Model
       		$query->where('phone', $phone)->limit(1)->order('time', 'desc');;
       	});
       	return $this-getAttr('code');
-
-		});
       }
 }
 
