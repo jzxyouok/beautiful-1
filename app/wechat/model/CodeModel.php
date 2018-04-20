@@ -30,11 +30,11 @@ class CodeModel extends Model
       	// 	$query->where('phone', $phone)->limit(1)->order('time', 'desc');
       	// });
       	// return $cd->code;
-      	$cd->where('phone', $phone)
+      	$res = $cd->where('phone', $phone)
 		    ->limit(1)
 		    ->order('time', 'desc')
 		    ->find();
-		return $cd->table;
+		return $res;
       }
 }
 
