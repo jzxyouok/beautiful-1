@@ -3,6 +3,7 @@
 namespace app\wechat\model;
 
 use think\Db;
+use think\Collection;
 use think\Model;
 
 /**
