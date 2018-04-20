@@ -19,7 +19,11 @@ class IndexController extends HomeBaseController
 	//首页
     public function index()
     {
-        return $this->fetch(':index');
+        if(session('openid', '', 'wechat') != ''){
+            return $this->fetch(':index');
+        }else{
+            $this->redirect('http://www.thinkcmf.com',302);
+        }        
     }
 
     //乡村美宿
@@ -100,13 +104,4 @@ class IndexController extends HomeBaseController
     	return $this->fetch(':register');
     }
 
-    // public function xcms()
-    // {
-    // 	return $this->fetch(':xcms');
-    // }
-
-    // public function xcms()
-    // {
-    // 	return $this->fetch(':xcms');
-    // }
 }

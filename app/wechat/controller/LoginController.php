@@ -35,8 +35,6 @@ class LoginController extends HomeBaseController
             $user_info = json_decode(Util::HttpGet($info_url));
             $nick_name = $user_info->nickname;
             $user_img = $user_info->headimgurl;
-            echo "<br />";
-            echo $nick_name;
             $user->data([
                 'id' => '',
                 'openid' => $openid,
