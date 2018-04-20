@@ -34,7 +34,7 @@ class CodeModel extends Model
 		    ->limit(1)
 		    ->order('time', 'desc')
 		    ->find();
-		return $res;
+		return $res->data;
       }
 }
 
