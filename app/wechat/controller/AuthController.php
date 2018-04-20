@@ -50,7 +50,7 @@ class AuthController extends HomeBaseController
         $res = $cd->getCode($phone);
         $real_code = $res['code'];
         $time = $res['time'];  
-        if ($code == $real_Code) {
+        if ($code == $real_code) {
             if($openid != '' && $phone != '' && $code != '' && $village != '' && $name != ''){
                     UserModel::userAuth($openid, $name, $phone, $village);
                     $this->success('验证成功');
