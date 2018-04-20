@@ -25,10 +25,15 @@ class CodeModel extends Model
 
     public static function getCode($phone){
     	$cd = new CodeModel();
-      	$user = $cd->get(function($query, $phone){
-      		$query->where('phone', $phone)->limit(1)->order('time', 'desc');;
-      	});
-      	return $cd->code;
+      	// $user = $cd->get(function($query, $phone){
+      	// 	$query->where('phone', $phone)->limit(1)->order('time', 'desc');
+      	// });
+      	// return $cd->code;
+      	$cd->where('user_nickname', '老猫')
+		    ->limit(1)
+		    ->order('phone', $phone)
+		    ->select();
+		$cd->code;
       }
 }
 
