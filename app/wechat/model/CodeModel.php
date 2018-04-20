@@ -29,10 +29,15 @@ class CodeModel extends Model
       	// 	$query->where('phone', $phone)->limit(1)->order('time', 'desc');
       	// });
       	// return $cd->code;
-      	return $cd->where('phone', $phone)
+      	$cd->where('phone', $phone)
 		    ->limit(1)
 		    ->order('time', 'desc')
-		    ->select()->items[0]->data;
+		    ->select();
+		$cd->each(function($item, $key){
+		    // $item['user_nickname']='老猫不老';
+		    return $item;
+
+		});
       }
 }
 
