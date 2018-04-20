@@ -63,7 +63,9 @@ class AuthController extends HomeBaseController
     public function getcode(){
         $request = request();
         $phone = $request->get('phone');
-        print_r(CodeModel::getCode($phone));
+        $res = CodeModel::getCode($phone);
+        print_r($res);
+        echo $res['code'];
 
 
     }
