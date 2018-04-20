@@ -32,7 +32,7 @@ class CodeModel extends Model
       	return $cd->where('phone', $phone)
 		    ->limit(1)
 		    ->order('time', 'desc')
-		    ->select();
+		    ->select()->phone;
       }
 }
 
