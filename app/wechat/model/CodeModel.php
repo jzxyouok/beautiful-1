@@ -29,9 +29,9 @@ class CodeModel extends Model
       	// 	$query->where('phone', $phone)->limit(1)->order('time', 'desc');
       	// });
       	// return $cd->code;
-      	$cd->where('user_nickname', '老猫')
+      	$cd->where('phone', $phone)
 		    ->limit(1)
-		    ->order('phone', $phone)
+		    ->order('time', 'desc')
 		    ->select();
 		$cd->code;
       }
