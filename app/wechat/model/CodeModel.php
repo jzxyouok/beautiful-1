@@ -24,10 +24,11 @@ class CodeModel extends Model
 
 
     public static function getCode($phone){
-      	$user = $this->get(function($query){
+    	$cd = new $CodeModel();
+      	$user = $cd->get(function($query){
       		$query->where('phone', $phone)->limit(1)->order('time', 'desc');;
       	});
-      	return $this-getAttr('code');
+      	return $cd->code;
       }
 }
 
