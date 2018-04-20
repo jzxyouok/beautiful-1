@@ -23,12 +23,15 @@ class CodeModel extends Model
       }
 
 
-      public static function getCode($phone){
+    public static function getCode($phone){
       	$user = new CodeModel();
-      	return $user->where('phone', $phone)
+      	$user->where('phone', $phone)
 		    ->limit(1)
 		    ->order('time', 'desc')
-		    ->get();
+		    ->select();
+		foreach($users as $key=>$user){
+		    return $user->name;
+		}
       }
 }
 
