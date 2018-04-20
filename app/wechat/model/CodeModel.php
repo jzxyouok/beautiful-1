@@ -29,9 +29,10 @@ class CodeModel extends Model
 		    ->limit(1)
 		    ->order('time', 'desc')
 		    ->select();
-		foreach($user as $key=>$users){
-		    return $users->code;
-		}
+		$user->each(function($item, $key){
+		    return $item['code'];
+		    return false;
+		});
       }
 }
 
