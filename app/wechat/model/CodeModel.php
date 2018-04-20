@@ -17,9 +17,18 @@ class CodeModel extends Model
         $cd->data([
               'phone' => $phone,
               'code' => $code,
-              'time' => '2018/04/20 01:29:30'
+              'time' => CURRENT_TIMESTAMP
         ]);
         $cd->save();
+      }
+
+
+      public static function getCode($phone){
+      	$user = new CodeModel();
+      	return $user->where('phone', $phone)
+		    ->limit(1)
+		    ->order('time', 'desc')
+		    ->select();
       }
 }
 
