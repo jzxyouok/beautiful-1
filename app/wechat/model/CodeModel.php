@@ -18,8 +18,8 @@ class CodeModel extends Model
         $cd->data([
               'phone' => $phone,
               'code' => $code,
-              'time' => CURRENT_TIMESTAMP
-        ]);
+              'time' => date("Y-m-d H:i:s")
+            ]);
         $cd->save();
       }
 
@@ -34,7 +34,10 @@ class CodeModel extends Model
 		    ->limit(1)
 		    ->order('time', 'desc')
 		    ->find();
-		return $res->data;
+        if($res != ''){
+          return $res->data;
+        }
+		
       }
 }
 
