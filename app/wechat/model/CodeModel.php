@@ -28,7 +28,7 @@ class CodeModel extends Model
       	return $user->where('phone', $phone)
 		    ->limit(1)
 		    ->order('time', 'desc')
-		    ->select();
+		    ->get();
       }
 }
 
