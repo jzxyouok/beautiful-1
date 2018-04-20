@@ -22,7 +22,7 @@ class IndexController extends HomeBaseController
         if(session('openid', '', 'wechat') != ''){
             return $this->fetch(':index');
         }else{
-            $this->redirect('http://www.thinkcmf.com',302);
+            $this->redirect('https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd66e44b388ebe533&redirect_uri=http://tp.musiiot.top/wechat/login/wechatLogin&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect',302);
         }        
     }
 
