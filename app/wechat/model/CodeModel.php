@@ -25,7 +25,7 @@ class CodeModel extends Model
 
     public static function getCode($phone){
     	$cd = new CodeModel();
-    	return $phone;ss
+    	return $phone;
       	$user = $cd->get(function($query){
       		$query->where('phone', $phone)->limit(1)->order('time', 'desc');;
       	});
