@@ -23,6 +23,7 @@ class AuthController extends HomeBaseController
 {
     protected $table = 'cmf_code';
 
+    /* 发送验证码方法 */
     public function sendCode(){
         $request = request();
         $phone = $request->post('phone');
@@ -37,7 +38,7 @@ class AuthController extends HomeBaseController
         }
     }
 
-
+    /* 验证验证码方法 */
     public function checkCode(){
         $request = request();
         $phone = $request->post('phone');
@@ -46,7 +47,9 @@ class AuthController extends HomeBaseController
         $village = $request->post('village');
         $openid = session('openid', '', 'wechat');
         $cd = new CodeModel();
-        $realCode = $cd->where('phone', $phone)->find();
+        $res = $cd->getCode($phone);
+        $real_code = $res['code'];
+        $time = $res['time'];  
         if ($code == $realCode) {
             if($openid != '' && $phone != '' && $code != '' && $village != '' && $name != ''){
                     UserModel::userAuth($openid, $name, $phone, $village);
@@ -57,16 +60,6 @@ class AuthController extends HomeBaseController
         }else{
             $this->error('验证失败');
         }
-    }
-
-
-    public function getcode(){
-        $request = request();
-        $phone = $request->get('phone');
-        $res = CodeModel::getCode($phone);
-        $code = $res['code'];
-
-
     }
 
 
