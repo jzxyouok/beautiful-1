@@ -27,7 +27,7 @@ class AdminVillageController extends AdminBaseController
 
     public function add()
     {
-        
+        return $this->fetch();   
     }
 
 
