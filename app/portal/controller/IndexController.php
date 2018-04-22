@@ -51,6 +51,7 @@ class IndexController extends HomeBaseController
         if(UserModel::get(['openid' => $openid])['is_real']){
             return $this->fetch(':wc');
         }else{
+            $this->assign('user_url','Hello ThinkCMF!');
             return $this->fetch(':register');
         }
     }
