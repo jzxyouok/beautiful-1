@@ -17,7 +17,7 @@ use app\portal\model\PortalCategoryModel;
 use think\Db;
 use app\admin\model\ThemeModel;
 
-class AdminArticleController extends AdminBaseController
+class AdminVillageController extends AdminBaseController
 {
     /**
      * 文章列表
