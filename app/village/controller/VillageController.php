@@ -40,4 +40,8 @@ class VillageController extends HomeBaseController
 
 	}
 
+	public function add(){
+		$this->fetch();
+	}
+
 }
