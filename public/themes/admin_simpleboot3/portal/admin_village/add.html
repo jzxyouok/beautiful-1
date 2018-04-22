@@ -1,11 +1,35 @@
 <include file="public@header"/>
+<style type="text/css">
+	.form{
+		width: 300px;
+		height: 100px;
+		margin: 0 auto;
+		margin-top: 100px;
+		text-align: center;
+	}
+	.form input{
+		margin-bottom: 30px;
+	}
+	.form button{
+		width: 100px;
+		border-radius: 5px;
+	}
+</style>
 </head>
 <body>
 
 	<div class="form">
 		<form>
-			乡村名字：<input type="text" name="name">
-			行政规划：<input type="text" name="disiory">
+
+			<div class="input-group">
+			  <span class="input-group-addon" id="basic-addon1">乡村名字：</span>
+			  <input type="text" class="form-control" placeholder="乡村名字" aria-describedby="basic-addon1">
+			</div>
+			<div class="input-group">
+			  <span class="input-group-addon" id="basic-addon1">行政规划：</span>
+			  <input type="text" class="form-control" placeholder="行政规划" aria-describedby="basic-addon1">
+			</div>
+			<button type="button" class="btn btn-primary">添加</button>
 		</form>
 	</div>
 
