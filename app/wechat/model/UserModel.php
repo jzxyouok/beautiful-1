@@ -30,15 +30,15 @@ class UserModel extends Model
 		$user->save();
 	}
 
-      /* 定义用户验证方法 */
-      public static function userAuth($openid, $name, $phone, $village){
-            $user = new UserModel();
-            $user->save([
-                'real_name' => $name,
-                'phone'     => $phone,
-                'village'   => $village
-            ], ['openid' => $openid]);
-      }
+  /* 定义用户验证方法 */
+  public static function userAuth($openid, $name, $phone, $village){
+        $user = new UserModel();
+        $user->save([
+            'real_name' => $name,
+            'phone'     => $phone,
+            'village'   => $village
+        ], ['openid' => $openid]);
+  }
 }
 
  ?>
