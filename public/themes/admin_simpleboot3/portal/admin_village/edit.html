@@ -21,6 +21,7 @@
                     <td>{$vo.division}</td>
                     <td>
 						<a href="{:url('editor', array('id'=>$vo['id']))}">编辑</a>
+						<a href="{:url('remove', array('id'=>$vo['id']))}">删除</a>
                     </td>
                 </tr>
             </foreach>

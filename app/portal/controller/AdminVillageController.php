@@ -74,4 +74,11 @@ class AdminVillageController extends AdminBaseController
         $this->success('修改成功');
     }
 
+    public function remove(){
+        $request = request();
+        $id = $request->param('id');
+        UserModel::destroy(id);
+        $this->success('删除成功');
+    }
+
 }
