@@ -63,7 +63,7 @@ class AdminVillageController extends AdminBaseController
         return $this->fetch();
     }
 
-    public function addeditor(){
+    public function addEdit(){
         $request = request();
         $id = $request->post('id');
         $v_name = $request->post('name');
