@@ -36,7 +36,7 @@
                     	<input type="hidden" name="id" value="$vo['id']">
                         <neq name="vo.id" value="1">
                             <empty name="vo.user_status">
-                            	<button class="js-ajax-submit" type="submit">编辑</button>
+                            <input type="success" name="submit" value="编辑">
                                 <!-- <a href="{:url('editor',array('id'=>$vo['id']))}">编辑</a> -->
                             </empty>
                         </neq>
