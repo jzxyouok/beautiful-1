@@ -59,7 +59,7 @@ class AdminVillageController extends AdminBaseController
         $this->assign('id', $id);
         $this->assign('name', $name);
         $this->assign('division', $division);
-        $this->fetch();
+        $this->fetch(：editor);
     }
 
 }
