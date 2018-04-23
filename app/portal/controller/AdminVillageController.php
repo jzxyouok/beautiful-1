@@ -16,6 +16,8 @@ use app\portal\service\PostService;
 use app\portal\model\PortalCategoryModel;
 use think\Db;
 use app\admin\model\ThemeModel;
+use think\request;
+use app\portal\model\VillageModel;
 
 class AdminVillageController extends AdminBaseController
 {
@@ -33,7 +35,11 @@ class AdminVillageController extends AdminBaseController
 
     public function addPost()
     {
-
+        $request = request();
+        $v_name = $request->post('name');
+        $division = $request->post('division');
+        VillageModel::addVillage($v_name, $division);
+        $this->success('添加成功');
     }
 
 
