@@ -19,7 +19,7 @@ class VillageModel extends Model
 	public static function addVillage($name, $division){
 		$village = new VillageModel;
 		$village->data([
-		    'v_name'   => $name,
+		    'name'   => $name,
 		    'division' => $division
 		]);
 		$village->save();
