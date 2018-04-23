@@ -53,7 +53,7 @@ class AdminVillageController extends AdminBaseController
 
     public function editor(){
         $request = request();
-        $id = $request->post("id");
+        $id = $request->param('id');
         $query = Db::name('village')->where('id',$id)->find();
         $name = $query['name'];
         $division = $query['division'];
