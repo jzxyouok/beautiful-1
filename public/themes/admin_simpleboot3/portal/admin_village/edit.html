@@ -32,21 +32,6 @@
                     <td>{$vo.id}</td>
                     <td>{$vo.name}</td>
                     <td>{$vo.division}</td>
-                    <td>{$user_statuses[$vo['user_status']]}</td>
-                    <td>
-                        <neq name="vo.id" value="1">
-                            <empty name="vo.user_status">
-                                <a href="{:url('adminIndex/cancelban',array('id'=>$vo['id']))}"
-                                   class="js-ajax-dialog-btn"
-                                   data-msg="{:lang('ACTIVATE_USER_CONFIRM_MESSAGE')}">{:lang('ACTIVATE_USER')}</a>
-                                <else/>
-                                <a href="{:url('adminIndex/ban',array('id'=>$vo['id']))}" class="js-ajax-dialog-btn"
-                                   data-msg="{:lang('BLOCK_USER_CONFIRM_MESSAGE')}">{:lang('BLOCK_USER')}</a>
-                            </empty>
-                            <else/>
-                            <a style="color: #ccc;">{:lang('BLOCK_USER')}</a>
-                        </neq>
-                    </td>
                 </tr>
             </foreach>
             </tbody>
