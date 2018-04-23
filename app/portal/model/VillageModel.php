@@ -17,7 +17,7 @@ class VillageModel extends Model
 	protected $table = "cmf_village";
 
 	public static function addVillage($name, $division){
-		$vliiage = new VillageModel;
+		$village = new VillageModel;
 		$village->data([
 			'id'       => null,
 		    'v_name'   => $name,
