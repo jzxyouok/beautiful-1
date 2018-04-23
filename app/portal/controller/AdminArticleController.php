@@ -77,7 +77,7 @@ class AdminArticleController extends AdminBaseController
         $themeModel        = new ThemeModel();
         $articleThemeFiles = $themeModel->getActionThemeFiles('portal/Article/index');
         $this->assign('article_theme_files', $articleThemeFiles);
-        $this->assign('village', 'cmf_get_current_admin_id()');
+        $this->assign('village', cmf_get_current_admin_id());
         return $this->fetch();
     }
 
