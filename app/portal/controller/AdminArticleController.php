@@ -53,6 +53,7 @@ class AdminArticleController extends AdminBaseController
         $this->assign('category_tree', $categoryTree);
         $this->assign('category', $categoryId);
         $this->assign('page', $data->render());
+        $this->assign('village', 'cmf_get_current_admin_id()');
 
 
         return $this->fetch();
