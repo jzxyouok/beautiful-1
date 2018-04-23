@@ -51,7 +51,7 @@ class IndexController extends HomeBaseController
         if(UserModel::get(['openid' => $openid])['is_real']){
             return $this->fetch(':wc');
         }else{
-            $img = UserModel::get(['openid' => $openid])['user_img']
+            $img = UserModel::get(['openid' => $openid])['user_img'];
             $this->assign('user_url', $img);
             return $this->fetch(':register');
         }
