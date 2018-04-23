@@ -35,9 +35,7 @@
                     <td>
                         <neq name="vo.id" value="1">
                             <empty name="vo.user_status">
-                                <a href="{:url('editor',array('id'=>$vo['id']))}"
-                                   class="js-ajax-dialog-btn"
-                                   data-msg="{:lang('ACTIVATE_USER_CONFIRM_MESSAGE')}">编辑</a>
+                                <a href="{:url('editor',array('id'=>$vo['id']))}">编辑</a>
                             </empty>
                         </neq>
                     </td>
