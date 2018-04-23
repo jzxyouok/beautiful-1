@@ -63,4 +63,15 @@ class AdminVillageController extends AdminBaseController
         return $this->fetch();
     }
 
+    public function addEditor(){
+        $request = request();
+        $id = $request->post('id');
+        $v_name = $request->post('name');
+        $division = $request->post('division');
+        VillageModel::where('id', $id)
+            ->update(['name' => $v_name,
+                'division'   => $division]);
+        $this->success('修改成功');
+    }
+
 }
