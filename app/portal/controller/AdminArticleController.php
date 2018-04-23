@@ -16,6 +16,7 @@ use app\portal\service\PostService;
 use app\portal\model\PortalCategoryModel;
 use think\Db;
 use app\admin\model\ThemeModel;
+use app\portal\model\VillageModel;
 
 class AdminArticleController extends AdminBaseController
 {
@@ -77,7 +78,8 @@ class AdminArticleController extends AdminBaseController
         $themeModel        = new ThemeModel();
         $articleThemeFiles = $themeModel->getActionThemeFiles('portal/Article/index');
         $this->assign('article_theme_files', $articleThemeFiles);
-        $this->assign('village', cmf_get_current_admin_id());
+        $query = Db::name('village')->where('id',cmf_get_current_admin_id())->find();
+        $this->assign('village', $query['belong']);
         return $this->fetch();
     }
 
