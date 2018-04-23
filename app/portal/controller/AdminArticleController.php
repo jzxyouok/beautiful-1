@@ -78,7 +78,7 @@ class AdminArticleController extends AdminBaseController
         $themeModel        = new ThemeModel();
         $articleThemeFiles = $themeModel->getActionThemeFiles('portal/Article/index');
         $this->assign('article_theme_files', $articleThemeFiles);
-        $query = Db::name('village')->where('id',cmf_get_current_admin_id())->find();
+        $query = Db::name('user')->where('id',cmf_get_current_admin_id())->find();
         $this->assign('village', $query['belong']);
         return $this->fetch();
     }
