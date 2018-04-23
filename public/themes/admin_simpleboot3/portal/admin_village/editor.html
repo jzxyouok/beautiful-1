@@ -1,0 +1,39 @@
+<include file="public@header"/>
+<style type="text/css">
+	.form{
+		width: 300px;
+		height: 100px;
+		margin: 0 auto;
+		margin-top: 100px;
+		text-align: center;
+	}
+	.form button{
+		width: 100px;
+		border-radius: 5px;
+	}
+	.input-group{
+		margin-bottom: 20px;
+		border-radius: 5px;
+	}
+</style>
+</head>
+<body>
+
+	<div class="form">
+		<form class="input-group js-ajax-form" action="addEdit" method="post">
+			<input type="hidden" name="id" value="{$id}">
+			<div class="input-group">
+			  <span class="input-group-addon" id="basic-addon1">乡村名字：</span>
+			  <input type="text" class="form-control" value="{$name}" aria-describedby="basic-addon1" name="name">
+			</div>
+			<div class="input-group"> 
+			  <span class="input-group-addon" id="basic-addon1">行政规划：</span>
+			  <input type="text" class="form-control" value="{$division}" aria-describedby="basic-addon1" name="division">
+			</div>
+			<button class="btn btn-primary js-ajax-submit" type="submit">提交</button>
+		</form>
+	</div>
+
+	<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

@@ -50,4 +50,16 @@ class AdminVillageController extends AdminBaseController
         return $this->fetch();
     }
 
+
+    public function editor(){
+        $id = input('param.id', 0, 'intval');
+        $query = Db::name('village')->where('id',$id)->find();
+        $name = $query['name'];
+        $division = $query['division'];
+        $this->assign('id', $id);
+        $this->assign('name', $name);
+        $this->assign('division', $division);
+        $this->fetch();
+    }
+
 }
