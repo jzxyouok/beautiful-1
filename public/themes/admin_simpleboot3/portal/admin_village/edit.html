@@ -33,9 +33,12 @@
                     <td>{$vo.name}</td>
                     <td>{$vo.division}</td>
                     <td>
-                    	<input type="hidden" name="id" value="{$vo['id']}">
+                    <neq name="vo.id" value="1">
+                    	<input type="hidden" name="id" value="{array('id'=>$vo['id'])}">
+						<input type="submit" name="submit" value="编辑">
 
-                            <input type="submit" name="submit" value="编辑">
+					</neq>
+                            
                                 <!-- <a href="{:url('editor',array('id'=>$vo['id']))}">编辑</a> -->
 
 
