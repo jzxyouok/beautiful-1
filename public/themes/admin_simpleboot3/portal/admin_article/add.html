@@ -33,7 +33,7 @@
         <li class="active"><a href="{:url('AdminArticle/add')}">添加文章</a></li>
     </ul>
     <form action="{:url('AdminArticle/addPost')}" method="post" class="form-horizontal js-ajax-form margin-top-20">
-        <input type="text" name="belong" value="{$village}">
+        <input type="hidden" name="belong" value="{$village}">
         <div class="row">
             <div class="col-md-9">
                 <table class="table table-bordered">
