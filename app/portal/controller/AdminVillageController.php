@@ -45,6 +45,8 @@ class AdminVillageController extends AdminBaseController
 
     public function edit()
     {
+        $list = Db::name('village')->select();
+        $this->assign('list', $list);
         return $this->fetch();
     }
 

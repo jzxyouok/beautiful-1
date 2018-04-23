@@ -27,18 +27,11 @@
             </tr>
             </thead>
             <tbody>
-            <!-- <foreach name="list" item="vo">
+            <foreach name="list" item="vo">
                 <tr>
                     <td>{$vo.id}</td>
-                    <td>{$vo['user_login']?$vo['user_login']:($vo['mobile']?$vo['mobile']:lang('THIRD_PARTY_USER'))}
-                    </td>
-                    <td>{$vo['user_nickname']?$vo['user_nickname']:lang('NOT_FILLED')}</td>
-                    <td><img width="25" height="25" src="{:url('user/public/avatar',array('id'=>$vo['id']))}"/></td>
-                    <td>{$vo.user_email}</td>
-                    <td>{$vo.mobile}</td>
-                    <td>{:date('Y-m-d H:i:s',$vo['create_time'])}</td>
-                    <td>{:date('Y-m-d H:i:s',$vo['last_login_time'])}</td>
-                    <td>{$vo.last_login_ip}</td>
+                    <td>{$vo.name}</td>
+                    <td>{$vo.division}</td>
                     <td>{$user_statuses[$vo['user_status']]}</td>
                     <td>
                         <neq name="vo.id" value="1">
@@ -55,7 +48,7 @@
                         </neq>
                     </td>
                 </tr>
-            </foreach> -->
+            </foreach>
             </tbody>
         </table>
         <!-- <div class="pagination">{$page}</div> -->
