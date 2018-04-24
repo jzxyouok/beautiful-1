@@ -133,7 +133,7 @@ class AdminArticleController extends AdminBaseController
             hook('portal_admin_after_save_article', $hookParam);
 
             Db::name('portal_post')
-                ->where('published_time', $ptime)
+                ->where('id', $portalPostModel->id)
                 ->update(['belong' => $belong]);
 
             $this->success('添加成功!', url('AdminArticle/edit', ['id' => $portalPostModel->id]));
