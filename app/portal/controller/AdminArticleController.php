@@ -100,6 +100,7 @@ class AdminArticleController extends AdminBaseController
     {
         if ($this->request->isPost()) {
             $data   = $this->request->param();
+            print_r($data);
             $post   = $data['post'];
             $result = $this->validate($post, 'AdminArticle');
             if ($result !== true) {

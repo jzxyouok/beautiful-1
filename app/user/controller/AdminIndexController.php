@@ -120,9 +120,9 @@ class AdminIndexController extends AdminBaseController
      *     'param'  => ''
      * )
      */
-    public function cancelBan()
+    public function cancelBan()  
     {
-        $id = input('param.id', 0, 'intval');
+         
         if ($id) {
             Db::name("user")->where(["id" => $id, "user_type" => 2])->setField('user_status', 1);
             $this->success("会员启用成功！", '');
