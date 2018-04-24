@@ -102,8 +102,8 @@ class AdminArticleController extends AdminBaseController
             $data   = $this->request->param();
             print_r($data);
             $post   = $data['post'];
-            $time = $post['published_time'];
-            $belong = $data['belong'];
+            // $time = $post['published_time'];
+            // $belong = $data['belong'];
             $result = $this->validate($post, 'AdminArticle');
             if ($result !== true) {
                 $this->error($result);
