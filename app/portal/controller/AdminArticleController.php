@@ -135,7 +135,6 @@ class AdminArticleController extends AdminBaseController
             Db::name('portal_post')
                 ->where('id', $portalPostModel->id)
                 ->update(['belong' => $belong]);
-            echo $belong;
             $this->success('添加成功!', url('AdminArticle/edit', ['id' => $portalPostModel->id]));
         }
 
