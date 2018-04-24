@@ -16,7 +16,6 @@ use app\portal\service\PostService;
 use app\portal\model\PortalCategoryModel;
 use think\Db;
 use app\admin\model\ThemeModel;
-use app\portal\model\VillageModel;
 
 class AdminArticleController extends AdminBaseController
 {
@@ -56,7 +55,6 @@ class AdminArticleController extends AdminBaseController
         $this->assign('page', $data->render());
 
 
-
         return $this->fetch();
     }
 
@@ -78,8 +76,6 @@ class AdminArticleController extends AdminBaseController
         $themeModel        = new ThemeModel();
         $articleThemeFiles = $themeModel->getActionThemeFiles('portal/Article/index');
         $this->assign('article_theme_files', $articleThemeFiles);
-        $query = Db::name('user')->where('id',cmf_get_current_admin_id())->find();
-        $this->assign('village', $query['belong']);
         return $this->fetch();
     }
 
@@ -100,10 +96,7 @@ class AdminArticleController extends AdminBaseController
     {
         if ($this->request->isPost()) {
             $data   = $this->request->param();
-            print_r($data);
             $post   = $data['post'];
-            // $time = $post['published_time'];
-            // $belong = $data['belong'];
             $result = $this->validate($post, 'AdminArticle');
             if ($result !== true) {
                 $this->error($result);
@@ -127,7 +120,7 @@ class AdminArticleController extends AdminBaseController
                 }
             }
 
-
+            $portalPostModel->adminAddArticle($data['post'], $data['post']['categories']);
 
             $data['post']['id'] = $portalPostModel->id;
             $hookParam          = [
@@ -135,7 +128,6 @@ class AdminArticleController extends AdminBaseController
                 'article' => $data['post']
             ];
             hook('portal_admin_after_save_article', $hookParam);
-            // Db::name('portal_post') ->where('published_time', $time) ->update(['belong' => $belong]);
 
 
             $this->success('添加成功!', url('AdminArticle/edit', ['id' => $portalPostModel->id]));
