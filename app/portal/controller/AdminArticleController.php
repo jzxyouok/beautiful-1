@@ -97,7 +97,9 @@ class AdminArticleController extends AdminBaseController
     {
         if ($this->request->isPost()) {
             $data   = $this->request->param();
+            $belong = $data['belong'];
             $post   = $data['post'];
+            $ptime = $post['published_time'];
             $result = $this->validate($post, 'AdminArticle');
             if ($result !== true) {
                 $this->error($result);
@@ -130,6 +132,9 @@ class AdminArticleController extends AdminBaseController
             ];
             hook('portal_admin_after_save_article', $hookParam);
 
+            Db::name('portal_post')
+                ->where('published_time', $ptime)
+                ->update(['belong' => $belong]);
 
             $this->success('添加成功!', url('AdminArticle/edit', ['id' => $portalPostModel->id]));
         }
