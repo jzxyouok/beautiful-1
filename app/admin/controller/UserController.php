@@ -119,7 +119,7 @@ class UserController extends AdminBaseController
                 unset($_POST['village_name']);
                 foreach ($role_ids as $role_id) {
                     if ($role_id == 1) {
-                        $_POST['village_id'] = -1;
+                        $_POST['belong'] = -1;
                     }else{
                         $re = Db::name('village')->where('name',$name)->find();
                         if ($re) {
