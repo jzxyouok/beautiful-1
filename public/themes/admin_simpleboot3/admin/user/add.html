@@ -69,7 +69,7 @@
 		function shVe(){
 			var village = document.getElementById("village").value;
 			var oData = document.getElementById("shRes");
-			// oData.innerHtml = '';
+			oData.innerHTML = '';
 			$.ajax({
 				url: 'http://tp.musiiot.top/admin/user/shVe',
 				method: 'POST',
@@ -83,12 +83,17 @@
 					if (res) {
 						for (var i = 0; i < res.length; i++) {
 							console.log(res[i].name);
-							oData.innerHTML += '<div class="shResItem">'+res[i].name+'</div>';
+							oData.innerHTML += '<div class="shResItem" onclick="readData(this)">'+res[i].name+'</div>';
 							console.log(oData.innerHtml);
 						}
 					}
 				}
 			})
+		}
+
+		function readData(Obj){
+			var datas = Obj.innerText;
+			document.getElementById("village").value = datas;
 		}
 	</script>
 </body>
