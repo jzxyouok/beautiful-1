@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>中外乡村</title>
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
+    <script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+    <style>
+        .search {
+            width: 95%;
+            margin: 0 auto;
+        }
+
+        .container-pic {
+            display: block;
+            margin-top: 8px;
+            margin-left: 3%;
+        }
+
+        .bottom-pic {
+            margin-top: 8px;
+        }
+
+        .bottom-pic .weui-flex__item:nth-child(2) {
+            margin-left: -2%;
+        }
+
+        .bottom-pic .weui-flex__item:nth-child(3) {
+            margin-left: 3%;
+        }
+
+        .bottom-pic .weui-flex__item:nth-child(4) .placeholder img {
+            float: right;
+        }
+
+        .bottom-txt {
+            text-align: center;
+        }
+
+        .bottom-txt .weui-flex__item:nth-child(1) {
+            flex: 0.25;
+        }
+
+        .bottom-txt .weui-flex__item:nth-child(2) {
+            flex: 0.5;
+        }
+
+        .bottom-txt .weui-flex__item:nth-child(3) {
+            flex: 0.25;
+        }
+
+        .foot {
+            text-align: center;
+            background: darkgrey;
+            margin-top: 15px;
+        }
+
+        .weui-flex .weui-flex__item .placeholder-a:active {
+            background: grey;
+        }
+    </style>
+</head>
+<body>
+<img src="CAFCountrysideImg/img_01.png" width="100%">
+
+<div class="search">
+    <form class="weui-search-bar__form">
+        <div class="weui-search-bar__box">
+            <i class="weui-icon-search"></i>
+            <input type="search" class="weui-search-bar__input" id="search_input" placeholder="搜索"/>
+            <a href="javascript:" class="weui-icon-clear" id="search_clear"></a>
+        </div>
+    </form>
+</div>
+
+<img src="CAFCountrysideImg/img_04.png" width="94%" class="container-pic">
+
+<div class="weui-flex bottom-pic">
+    <div class="weui-flex__item">
+        <div class="placeholder">
+            <img src="CAFCountrysideImg/img_07.png" width="88%">
+        </div>
+    </div>
+    <div class="weui-flex__item">
+        <div class="placeholder">
+            <img src="CAFCountrysideImg/img_09.png" width="108%">
+        </div>
+    </div>
+    <div class="weui-flex__item">
+        <div class="placeholder">
+            <img src="CAFCountrysideImg/img_11.png" width="108%">
+        </div>
+    </div>
+    <div class="weui-flex__item">
+        <div class="placeholder">
+            <img src="CAFCountrysideImg/img_13.png" width="88%">
+        </div>
+    </div>
+</div>
+
+<div class="weui-flex bottom-txt">
+    <div class="weui-flex__item">
+        <div class="placeholder">加拿大·X村</div>
+    </div>
+    <div class="weui-flex__item">
+        <div class="placeholder">广西·兴平--新西兰·X村</div>
+    </div>
+    <div class="weui-flex__item">
+        <div class="placeholder">贵州·X村</div>
+    </div>
+</div>
+
+<div class="weui-flex foot">
+    <div class="weui-flex__item">
+        <a>
+            <div class="placeholder-a">加入中国乡村</div>
+        </a>
+    </div>
+    <div class="weui-flex__item">
+        <a>
+            <div class="placeholder-a">XX村合作资源</div>
+        </a>
+    </div>
+    <div class="weui-flex__item">
+        <a>
+            <div class="placeholder-a">体验国外乡村</div>
+        </a>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    var clearInput = document.getElementById("search_clear");
+    clearInput.onclick = function () {
+        document.getElementById("search_input").value = "";
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>乡村论坛</title>
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
+    <script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+    <style>
+        .search {
+            width: 95%;
+            margin: 0 auto;
+        }
+
+        .weui-flex {
+            margin-top: 14px;
+            margin-left: 2%;
+        }
+
+        .weui-flex .weui-flex__item .placeholder {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .weui-flex .weui-flex__item .placeholder img {
+            display: block;
+            width: 94%;
+        }
+
+        .container {
+            width: 96%;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        .container img{
+            width: 100%;
+        }
+
+        .foot{
+            margin-top: 10px;
+        }
+
+        .foot .foot-txt{
+            color: orange;font-size: 12px;width: 96%;margin: 0 auto;
+        }
+
+        .foot .foot-container{
+            margin-top: 8px;
+        }
+
+        .foot .foot-container img{
+            width: 80%;
+            display: block;
+        }
+
+        .foot .foot-container .container-left{
+            float: left;width: 30%;margin-left: 2%;font-size: 10px;
+        }
+
+        .foot .foot-container .container-mid{
+            float: left;width: 30%;margin-left: 2%;font-size: 10px;
+        }
+
+        .foot .foot-container .container-right{
+            float: left;width: 30%;margin-left: 3%;font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+<img src="CountrysideForumImg/img_01.png" width="100%">
+
+<div class="search">
+    <form class="weui-search-bar__form">
+        <div class="weui-search-bar__box">
+            <i class="weui-icon-search"></i>
+            <input type="search" class="weui-search-bar__input" id="search_input" placeholder="搜索"/>
+            <a href="javascript:" class="weui-icon-clear" id="search_clear"></a>
+        </div>
+    </form>
+</div>
+
+<div class="weui-flex">
+    <div class="weui-flex__item">
+        <div class="placeholder">
+            <img src="CountrysideForumImg/img_04.png">
+            区域论坛
+        </div>
+    </div>
+    <div class="weui-flex__item">
+        <div class="placeholder">
+            <img src="CountrysideForumImg/乡村论坛_06.png">
+            主题论坛
+        </div>
+    </div>
+    <div class="weui-flex__item">
+        <div class="placeholder">
+            <img src="CountrysideForumImg/乡村论坛_08.png">
+            乡村沙龙
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <img src="CountrysideForumImg/img_13.png">
+</div>
+
+<div class="foot">
+    <div class="foot-txt">
+        往期回顾
+    </div>
+    <div class="foot-container">
+        <div class="container-left">
+            <img src="CountrysideForumImg/img_17.png">
+            乡建人今日齐聚于此，<br/>民谣唱响荆楚家学第一村！
+        </div>
+        <div class="container-mid">
+            <img src="CountrysideForumImg/img_17.png">
+            乡建人今日齐聚于此，<br/>民谣唱响荆楚家学第一村！
+        </div>
+        <div class="container-right">
+            <img src="CountrysideForumImg/img_17.png">
+            乡建人今日齐聚于此，<br/>民谣唱响荆楚家学第一村！
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    var clearInput = document.getElementById("search_clear");
+    clearInput.onclick = function () {
+        document.getElementById("search_input").value = "";
+    }
+</script>
+</body>
+</html>

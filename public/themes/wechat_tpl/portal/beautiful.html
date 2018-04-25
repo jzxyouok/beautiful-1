@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>美丽乡村</title>
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
+    <script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+    <style type="text/css">
+        .search {
+            width: 95%;
+            margin: 0 auto;
+        }
+
+        .nav {
+            margin-top: 8px;
+        }
+
+        .nav span {
+            margin-left: 20px;
+            color: orange;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .nav span:nth-child(1) {
+            margin-left: 30px;
+        }
+
+        .mid {
+            width: 97%;
+            margin: 0 auto;
+        }
+
+        .mid img {
+            width: 99%;
+        }
+
+        .mid span {
+            display: block;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .foot {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .foot img {
+            width: 70%;
+        }
+    </style>
+</head>
+<body>
+
+
+<img src="BeautifulCountrysideImg/img、_01.png" width="100%">
+
+
+<div class="search">
+    <form class="weui-search-bar__form">
+        <div class="weui-search-bar__box">
+            <i class="weui-icon-search"></i>
+            <input type="search" class="weui-search-bar__input" id="search_input" placeholder="搜索"/>
+            <a href="javascript:" class="weui-icon-clear" id="search_clear"></a>
+        </div>
+    </form>
+</div>
+
+
+<div class="weui-flex nav">
+    <div class="weui-flex__item">
+        <span>精彩</span>
+        <span>热门</span>
+        <span>最新</span>
+    </div>
+</div>
+
+
+<div class="weui-flex mid" style="margin-top: 10px;">
+    <div class="weui-flex__item">
+        <img src="BeautifulCountrysideImg/img、_04.png">
+        <span>皖南水墨</span>
+    </div>
+    <div class="weui-flex__item">
+        <img src="BeautifulCountrysideImg/img、_04.png">
+        <span>美食西北</span>
+    </div>
+    <div class="weui-flex__item">
+        <img src="BeautifulCountrysideImg/img、_04.png">
+        <span>富春山居</span>
+    </div>
+</div>
+
+
+<div class="weui-flex foot">
+    <div class="weui-flex__item">
+        <img src="BeautifulCountrysideImg/img、_14.png">
+    </div>
+</div>
+
+<script type="text/javascript">
+    var clearInput = document.getElementById("search_clear");
+    clearInput.onclick = function () {
+        document.getElementById("search_input").value = "";
+    }
+</script>
+
+</body>
+</html>

@@ -106,4 +106,40 @@ class IndexController extends HomeBaseController
     	return $this->fetch(':register');
     }
 
+    //设置
+    public function setting()
+    {
+        return $this->fetch(':setting');
+    }
+
+    //美丽乡村
+    public function beautiful()
+    {
+        return $this->fetch(':beautiful');
+    }
+
+    //绝美路线
+    public function rode()
+    {
+        return $this->fetch(':rode');
+    }
+
+    //中外乡村
+    public function zwxc()
+    {
+        return $this->fetch(':zwxc');
+    }
+
+    //乡村沙龙
+    public function xcsl()
+    {
+        return $this->fetch(':xcsl');
+    }
+
+    //设计乡村
+    public function design()
+    {
+        return $this->fetch(':design');
+    }
+
 }
