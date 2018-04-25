@@ -51,13 +51,13 @@
 	<script src="__STATIC__/js/admin.js"></script>
 	<script type="text/javascript">
 		function shVe(){
-			var village = document.getElementById("");
+			var village = document.getElementById("village");
 			$.post({
 				url: 'http://tp.musiiot.top/admin/user/shVe',
 				method: 'POST',
 				data: {
 					village: village
-				}
+				},
 				dataType: 'json',
 				success: function(data){
 					console.log(data);
