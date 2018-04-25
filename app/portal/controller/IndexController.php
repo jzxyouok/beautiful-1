@@ -28,6 +28,7 @@ class IndexController extends HomeBaseController
                 $item['username'] = $user['user_login'];
                 $item['userimg'] = $user['avatar'];
                 $item['pimg'] = $item['more'];
+                return $item;
             });
             $this->assign('article', $articles);
             return $this->fetch(':index');
