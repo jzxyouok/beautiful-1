@@ -44,7 +44,13 @@ class AdminOauthController extends AdminBaseController
         // }
 
         $lists->each(function($item, $key){
-            $item['village']='测试';
+            $village_id = $item['village'];
+            if ($village_id != 0) {
+                $que = Db::name('village')->where('id',$village_id)->find();
+                $item['village'] = $que['name'];
+            }else{
+                $item['village'] = '未实名认证';
+            }
             return $item;
         });
 
