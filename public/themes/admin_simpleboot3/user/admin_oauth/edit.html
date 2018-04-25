@@ -1,7 +1,7 @@
 <include file="public@header"/>
 <style type="text/css">
     .main{
-        width: 50%;
+        width: 200px;
         margin: 0 auto;
         margin-top: 100px;
         text-align: right
@@ -15,6 +15,7 @@
 <div class="wrap">
     <form class="js-ajax-form" action="adminOauth/editPost" method="post">
         <div class="main">
+            <input type="hidden" name="id" value="{$id}">
             <div class="input_com">
                 姓名：<input type="text" name="name" value="{$name}">
             </div>

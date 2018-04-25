@@ -11,6 +11,7 @@
 namespace app\user\controller;
 
 use cmf\controller\AdminBaseController;
+use think\Request;
 use think\Db;
 
 class AdminOauthController extends AdminBaseController
@@ -86,9 +87,27 @@ class AdminOauthController extends AdminBaseController
         $user = Db::name("wechat_user")->where("id", $id)->find();
         $name = $user['real_name'];
         $phone = $user['phone'];
+        $this->assign('id', $id);
         $this->assign('name', $name);
         $this->assign('phone', $phone);
         return $this->fetch();
+    }
+
+
+    public function editPost()
+    {
+        $request = request();
+        $id = $request->post('id');
+        $name = $request->post('name');
+        $phone = $request->post('phone');
+        $id_num = $request->post('id_number');
+        Db::name('wechat_user')
+            ->where('id', $id)
+            ->update([
+                'real_name' => $name,
+                'phone'     => $phone,
+                'id_number' => $id_num
+            ]);
     }
 
 }
