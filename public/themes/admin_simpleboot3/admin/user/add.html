@@ -3,6 +3,8 @@
 	.shRes{
 		background: #FFF;
 		color: #000;
+		width: 100px;
+		height: 100px;
 	}
 	.shResItem{
 		border: 1px solid #000;
@@ -67,6 +69,7 @@
 		function shVe(){
 			var village = document.getElementById("village").value;
 			var oData = document.getElementById("shRes");
+			oData.innerHtml = '';
 			$.ajax({
 				url: 'http://tp.musiiot.top/admin/user/shVe',
 				method: 'POST',
