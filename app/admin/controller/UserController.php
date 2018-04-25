@@ -122,8 +122,8 @@ class UserController extends AdminBaseController
                         $_POST['village_id'] = -1;
                     }else{
                         $re = Db::name('village')->where('name',$name)->find();
-                        if (re) {
-                            $_POST['village_id'] = re['id'];
+                        if ($re) {
+                            $_POST['village_id'] = $re['id'];
                         }else{
                             $this->error("请为此用户指定正确的村庄！");
                         }
