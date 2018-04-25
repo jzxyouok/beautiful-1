@@ -10,6 +10,7 @@
 // +----------------------------------------------------------------------
 namespace app\portal\service;
 
+use think\Db;
 use app\portal\model\PortalPostModel;
 
 class PostService
