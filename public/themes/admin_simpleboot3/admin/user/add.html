@@ -51,7 +51,7 @@
 	<script src="__STATIC__/js/admin.js"></script>
 	<script type="text/javascript">
 		function shVe(){
-			var village = document.getElementById("village");
+			var village = document.getElementById("village").value;
 			$.ajax({
 				url: 'http://tp.musiiot.top/admin/user/shVe',
 				method: 'POST',
