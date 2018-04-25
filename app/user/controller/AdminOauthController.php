@@ -43,7 +43,7 @@ class AdminOauthController extends AdminBaseController
             
         // }
 
-        $oauthUserQuery->each(function($item, $key){
+        $lists->each(function($item, $key){
             $item['village']='测试';
             return $item;
         })
