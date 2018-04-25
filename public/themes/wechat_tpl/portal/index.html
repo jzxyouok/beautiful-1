@@ -187,27 +187,18 @@
             -乡村动态-
         </div>
         
-        <div class="main">
-            <div class="m-contant">
-                <div class="c-user">
-                    <img src="__TMPL__/public/assets/images/bar.png" width="40px" height="40px" />张三
-                </div>
-                <div class="c-text">
-                    党的十六大提出加qwXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXSS<img src="__TMPL__/public/assets/images/bar.png" width="80%" />
-                </div>
-            </div>
-        </div>
-        
-        <div class="main">
-            <div class="m-contant">
-                <div class="c-user">
-                    <img src="__TMPL__/public/assets/images/bar.png" width="40px" height="40px" />张三
-                </div>
-                <div class="c-text">
-                    党的十六大提出加qwXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXSS<img src="__TMPL__/public/assets/images/bar.png" width="80%" />
+        <foreach name="article" item="vo">
+            <div class="main">
+                <div class="m-contant">
+                    <div class="c-user">
+                        <img src="{$vo.userimg}" width="40px" height="40px" />{$vo.username}
+                    </div>
+                    <div class="c-text">
+                        {$vo.content}<img src="{$vo.pimg}" width="80%" />
+                    </div>
                 </div>
             </div>
-        </div>
+        </foreach>
         
     </div>
     
