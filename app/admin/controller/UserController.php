@@ -352,4 +352,12 @@ class UserController extends AdminBaseController
             $this->error('数据传入失败！');
         }
     }
+
+
+    public function shVe(){
+        $village = $this->request->post()['village'];
+        $name = '%'.$village.'%';
+        $data = Db::name('village')->where('name',$name)->select();
+        $this->success($data);
+    }
 }

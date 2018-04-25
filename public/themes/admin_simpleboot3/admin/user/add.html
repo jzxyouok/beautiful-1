@@ -38,7 +38,7 @@
 			<div class="form-group">
 				<label for="input-user_email" class="col-sm-2 control-label"><span class="form-required">*</span>所属村庄</label>
 				<div class="col-md-6 col-sm-10">
-					<input type="text" class="form-control" id="input-user_belong" name="user_belong">
+					<input type="text" class="form-control" id="input-user_belong" name="user_belong" onkeyup="shVe()">
 				</div>
 			</div>
 			<div class="form-group">
@@ -49,5 +49,17 @@
 		</form>
 	</div>
 	<script src="__STATIC__/js/admin.js"></script>
+	<script type="text/javascript">
+		function shVe(){
+			$.post({
+				url: 'shVe',
+				method: 'POST',
+				dataType: 'json',
+				success: function(data){
+					console.log(data);
+				}
+			})
+		}
+	</script>
 </body>
 </html>
