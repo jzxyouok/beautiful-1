@@ -61,7 +61,7 @@ class AdminOauthController extends AdminBaseController
         if (empty($id)) {
             $this->error('非法数据！');
         }
-        Db::name("third_party_user")->where("id", $id)->delete();
+        Db::name("wechat_user")->where("id", $id)->delete();
         $this->success("删除成功！", "admin_oauth/index");
     }
 
