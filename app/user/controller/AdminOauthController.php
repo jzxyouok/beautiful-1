@@ -38,7 +38,7 @@ class AdminOauthController extends AdminBaseController
             $village_id = $list['village'];
             if ($village_id != 0) {
                 $que = Db::name('village')->where('id',$village_id)->find();
-                $list['village'] = $que['name'];
+                $list['village_name'] = $que['name'];
             }
             
         }
