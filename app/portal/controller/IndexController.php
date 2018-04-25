@@ -27,7 +27,7 @@ class IndexController extends HomeBaseController
                 $user = Db::name('user')->where('id',$user_id)->find();
                 $item['username'] = $user['user_login'];
                 $item['userimg'] = $user['avatar'];
-                $item['pimg'] = $item['more']['thumbnail'];
+                $item['pimg'] = $item['more'];
             });
             $this->assign('article', $articles);
             return $this->fetch(':index');
