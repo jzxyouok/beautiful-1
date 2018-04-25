@@ -33,8 +33,13 @@ class AdminOauthController extends AdminBaseController
     public function index()
     {
         $oauthUserQuery = Db::name('wechat_user');
-        $admin = Db::name('user')->where('id',cmf_get_current_admin_id())->find();        
-        $lists = $oauthUserQuery->where('village', $admin['belong'])->paginate(10);
+        $admin = Db::name('user')->where('id',cmf_get_current_admin_id())->find();
+        if ($admin['belong'] == -1) {
+            $lists = $oauthUserQuery->paginate(10);
+        }else{
+            $lists = $oauthUserQuery->where('village', $admin['belong'])->paginate(10);
+        }        
+        
         $lists->each(function($item, $key){
             $village_id = $item['village'];
             if ($village_id != 0) {
