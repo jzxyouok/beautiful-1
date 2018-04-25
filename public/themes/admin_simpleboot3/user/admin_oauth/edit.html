@@ -1,10 +1,13 @@
 <include file="public@header"/>
 <style type="text/css">
     .main{
-        width: 200px;
+        width: 240px;
         margin: 0 auto;
         margin-top: 100px;
         text-align: right
+    }
+    .main .input_com{
+        margin-bottom: 20px;
     }
     input{
         text-align: left;
@@ -13,7 +16,7 @@
 </head>
 <body>
 <div class="wrap">
-    <form class="js-ajax-form" action="adminOauth/editPost" method="post">
+    <form class="js-ajax-form" action="../../editPost" method="post">
         <div class="main">
             <input type="hidden" name="id" value="{$id}">
             <div class="input_com">
