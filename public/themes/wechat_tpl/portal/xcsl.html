@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-    <title>乡村论坛</title>
+    <title>乡村沙龙</title>
+    <meta name="keywords" content="{$site_info.site_seo_keywords|default=''}"/>
+    <meta name="description" content="{$site_info.site_seo_description|default=''}">
+    <include file="public@head"/>
+    <link href="__TMPL__/public/assets/css/slippry/slippry.css" rel="stylesheet">
+    <link href="__TMPL__/public/assets/css/slider.css" rel="stylesheet">
     <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
     <script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding: 0;
+            background: #FFF;
+        }
         .search {
             width: 95%;
             margin: 0 auto;
@@ -69,7 +81,8 @@
     </style>
 </head>
 <body>
-<img src="__TMPL__/public/assets/images/CountrysideForumImg/img_01.png" width="100%">
+<!-- 顶部轮播图 -->
+<include file="public@slider"/>
 
 <div class="search">
     <form class="weui-search-bar__form">
@@ -125,13 +138,27 @@
         </div>
     </div>
 </div>
-
-
+<!-- 底部导航栏 -->
+<include file="public@bottom"/>
+<include file="public@scripts"/>
+<script src="__TMPL__/public/assets/js/slippry.min.js"></script>
 <script type="text/javascript">
     var clearInput = document.getElementById("search_clear");
     clearInput.onclick = function () {
         document.getElementById("search_input").value = "";
     }
+    $(function () {
+        $("#home-slider").slippry({
+            transition: 'fade',
+            useCSS: true,
+            captions: false,
+            speed: 1000,
+            pause: 3000,
+            auto: true,
+            preload: 'visible'
+        });
+        $("#home-slider").show();
+    });
 </script>
 </body>
 </html>
