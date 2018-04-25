@@ -42,7 +42,7 @@ class AdminOauthController extends AdminBaseController
         //     }
             
         // }
-        // for ($i=0; $i < sizeof($lists) ; $i++) { 
+        for ($i=0; $i < sizeof($lists) ; $i++) { 
             $lists[$i]['village'] = '测试';
         }
         // 获取分页显示
