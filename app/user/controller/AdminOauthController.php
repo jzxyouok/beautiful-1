@@ -36,8 +36,11 @@ class AdminOauthController extends AdminBaseController
         $lists = $oauthUserQuery->paginate(10);
         foreach ($lists as $list) {
             $village_id = $list['village'];
-            $que = Db::name('village')->where('id',$village_id)->select();
-            $list['village'] = $que['name'];
+            if ($village_id != 0) {
+                $que = Db::name('village')->where('id',$village_id)->select();
+                $list['village'] = $que['name'];
+            }
+            
         }
         // 获取分页显示
         $page = $lists->render();
