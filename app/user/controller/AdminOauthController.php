@@ -33,8 +33,8 @@ class AdminOauthController extends AdminBaseController
     public function index()
     {
         $oauthUserQuery = Db::name('wechat_user');
-
-        $lists = $oauthUserQuery->paginate(10);
+        $admin = Db::name('user')->where('id',cmf_get_current_admin_id())->find();        
+        $lists = $oauthUserQuery->where('village', $admin['belong'])->paginate(10);
         $lists->each(function($item, $key){
             $village_id = $item['village'];
             if ($village_id != 0) {
@@ -87,9 +87,11 @@ class AdminOauthController extends AdminBaseController
         $user = Db::name("wechat_user")->where("id", $id)->find();
         $name = $user['real_name'];
         $phone = $user['phone'];
+        $id_num = $user['id_number'];
         $this->assign('id', $id);
         $this->assign('name', $name);
         $this->assign('phone', $phone);
+        $this->assign('id_num', $id_number);
         return $this->fetch();
     }
 
@@ -103,8 +105,10 @@ class AdminOauthController extends AdminBaseController
         $id_num = $request->post('id_number');
         if ($id_num) {
             $isReal = 1;
+            $author = 1;
         }else{
             $isReal = 0;
+            $author = 0;
         }
         Db::name('wechat_user')
             ->where('id', $id)
@@ -112,7 +116,8 @@ class AdminOauthController extends AdminBaseController
                 'real_name' => $name,
                 'phone'     => $phone,
                 'id_number' => $id_num,
-                'is_real' => $isReal
+                'is_real'   => $isReal,
+                'authority' => $author
             ]);
         $this->success("修改成功！", "admin_oauth/index");
     }
