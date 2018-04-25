@@ -48,6 +48,7 @@
         .foot{
             width: 96%;
             margin: 0 auto;
+            margin-bottom: 75px;
         }
         .foot .f-center img{
             width: 96%;
@@ -148,10 +149,6 @@
     <script src="__TMPL__/public/assets/js/slippry.min.js"></script>
 
 <script type="text/javascript">
-    var clearInput = document.getlementById("search_clear");
-    clearInput.onclick = function () {
-        document.getElementById("search_input").value = "";
-    }
     $(function () {
         $("#home-slider").slippry({
             transition: 'fade',
@@ -163,7 +160,12 @@
             preload: 'visible'
         });
         $("#home-slider").show();
-    });;
+    });
+    var clearInput = document.getlementById("search_clear");
+    clearInput.onclick = function () {
+        document.getElementById("search_input").value = "";
+    }
+    
 </script>
 </body>
 </html>
