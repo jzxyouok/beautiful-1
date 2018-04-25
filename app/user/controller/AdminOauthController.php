@@ -46,7 +46,7 @@ class AdminOauthController extends AdminBaseController
         $lists->each(function($item, $key){
             $item['village']='测试';
             return $item;
-        })
+        });
 
         // 获取分页显示
         $page = $lists->render();
