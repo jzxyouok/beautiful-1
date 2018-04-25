@@ -34,15 +34,6 @@ class AdminOauthController extends AdminBaseController
         $oauthUserQuery = Db::name('wechat_user');
 
         $lists = $oauthUserQuery->paginate(10);
-        // foreach ($lists as &$list) {
-        //     $village_id = $list['village'];
-        //     if ($village_id != 0) {
-        //         $que = Db::name('village')->where('id',$village_id)->find();
-        //         $list['village'] = '测试上';
-        //     }
-            
-        // }
-
         $lists->each(function($item, $key){
             $village_id = $item['village'];
             if ($village_id != 0) {
@@ -85,5 +76,19 @@ class AdminOauthController extends AdminBaseController
         $this->success("删除成功！", "admin_oauth/index");
     }
 
+
+    public function edit()
+    {
+        $id = input('param.id', 0, 'intval');
+        if (empty($id)) {
+            $this->error('非法数据！');
+        }
+        $user = Db::name("wechat_user")->where("id", $id)->find();
+        $name = $user['real_name'];
+        $phone = $user['phone'];
+        $this->assign('name', $name);
+        $this->assign('phone', $phone);
+        return $this->fetch();
+    }
 
 }
