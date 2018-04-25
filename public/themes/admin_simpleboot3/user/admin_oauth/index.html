@@ -25,13 +25,14 @@
             <foreach name="lists" item="vo">
                 <tr>
                     <td>{$vo.id}</td>
-                    <td>{$vo.third_party}</td>
-                    <td><img width="25" height="25" src="{$vo.avatar}"/></td>
-                    <td>{$vo.user_nickname}</td>
-                    <td>{:date('Y-m-d H:i:s',$vo['create_time'])}</td>
-                    <td>{:date('Y-m-d H:i:s',$vo['last_login_time'])}</td>
-                    <td>{$vo.last_login_ip}</td>
-                    <td>{$vo.login_times}</td>
+                    <td>{$vo.openid}</td>
+                    <td>{$vo.nick_name}</td>
+                    <td><img width="25" height="25" src="{$vo.user_img}"/></td>
+                    <td>{$vo.is_real}</td>
+                    <td>{$vo.real_name}</td>
+                    <td>{$vo.phone}</td>
+                    <td>{$vo.id_number}</td>
+                    <td>{$vo.village}</td>
                     <td>
                         <a href="{:url('adminOauth/delete',array('id'=>$vo['id']))}" class="js-ajax-delete">{:lang('DELETE')}</a>
                     </td>
