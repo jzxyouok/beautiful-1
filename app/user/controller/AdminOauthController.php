@@ -43,7 +43,7 @@ class AdminOauthController extends AdminBaseController
             
         // }
         for ($i=0; $i < sizeof($lists) ; $i++) { 
-            $lists[$i]['village'] = '测试';
+            $lists[$i]['villages'] = '测试';
         }
         // 获取分页显示
         $page = $lists->render();
