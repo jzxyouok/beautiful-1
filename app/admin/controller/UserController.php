@@ -357,7 +357,8 @@ class UserController extends AdminBaseController
     public function shVe(){
         $village = $this->request->post()['village'];
         $name = '%'.$village.'%';
-        $data = Db::name('village')->where('name',$name)->select();
-        $this->success($data);
+        $where['name'] = array('like',$name);
+        $data = Db::name('village')->where($where)->select();
+        $this->success($name);
     }
 }
