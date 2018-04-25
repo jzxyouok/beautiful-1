@@ -34,11 +34,11 @@ class AdminOauthController extends AdminBaseController
         $oauthUserQuery = Db::name('wechat_user');
 
         $lists = $oauthUserQuery->paginate(10);
-        foreach ($lists as $list) {
+        foreach ($lists as $list => $value) {
             $village_id = $list['village'];
             if ($village_id != 0) {
                 $que = Db::name('village')->where('id',$village_id)->find();
-                $list['village_name'] = $que['name'];
+                $lists[$list]['village'] = $que['name'];
             }
             
         }
