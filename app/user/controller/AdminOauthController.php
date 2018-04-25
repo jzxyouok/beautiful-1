@@ -42,9 +42,12 @@ class AdminOauthController extends AdminBaseController
         //     }
             
         // }
-        for ($i=0; $i < sizeof($lists) ; $i++) { 
-            $lists[$i]['villages'] = '测试';
-        }
+
+        $oauthUserQuery->each(function($item, $key){
+            $item['village']='测试';
+            return $item;
+        })
+
         // 获取分页显示
         $page = $lists->render();
         $this->assign('lists', $lists);
