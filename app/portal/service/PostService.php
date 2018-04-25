@@ -73,7 +73,9 @@ class PostService
             $where['a.post_type'] = 1;
         }
         $user = Db::name('user')->where('id', cmf_get_current_admin_id())->find();
-        $where['a.belong'] = ['=', $user['belong']];
+        if ($user['belong'] != -1) {
+            $where['a.belong'] = ['=', $user['belong']];
+        }
         $portalPostModel = new PortalPostModel();
         $articles        = $portalPostModel->alias('a')->field($field)
             ->join($join)
