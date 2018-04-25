@@ -359,6 +359,6 @@ class UserController extends AdminBaseController
         $name = '%'.$village.'%';
         $where['name'] = array('like',$name);
         $data = Db::name('village')->where($where)->select();
-        $this->success($name);
+        $this->success($data);
     }
 }
