@@ -101,13 +101,20 @@ class AdminOauthController extends AdminBaseController
         $name = $request->post('name');
         $phone = $request->post('phone');
         $id_num = $request->post('id_number');
+        if ($id_num) {
+            $isReal = 1;
+        }else{
+            $isReal = 0;
+        }
         Db::name('wechat_user')
             ->where('id', $id)
             ->update([
                 'real_name' => $name,
                 'phone'     => $phone,
-                'id_number' => $id_num
+                'id_number' => $id_num,
+                'is_real()' => $isReal
             ]);
+        $this->success("修改成功！", "admin_oauth/index");
     }
 
 }
