@@ -112,7 +112,7 @@ class AdminOauthController extends AdminBaseController
                 'real_name' => $name,
                 'phone'     => $phone,
                 'id_number' => $id_num,
-                'is_real()' => $isReal
+                'is_real' => $isReal
             ]);
         $this->success("修改成功！", "admin_oauth/index");
     }
