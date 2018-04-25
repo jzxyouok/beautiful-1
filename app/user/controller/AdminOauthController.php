@@ -37,7 +37,7 @@ class AdminOauthController extends AdminBaseController
         foreach ($lists as $list) {
             $village_id = $list['village'];
             if ($village_id != 0) {
-                $que = Db::name('village')->where('id',$village_id)->select();
+                $que = Db::name('village')->where('id',$village_id)->find();
                 $list['village'] = $que['name'];
             }
             
