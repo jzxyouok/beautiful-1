@@ -113,8 +113,22 @@ class UserController extends AdminBaseController
     {
         if ($this->request->isPost()) {
             if (!empty($_POST['role_id']) && is_array($_POST['role_id'])) {
+                $name = $_POST['village_name'];
                 $role_ids = $_POST['role_id'];
                 unset($_POST['role_id']);
+                unset($_POST['village_name']);
+                foreach ($role_ids as $role_id) {
+                    if ($role_id == 1) {
+                        $_POST['village_id'] = -1;
+                    }else{
+                        $re = Db::name('village')->where('name',$name)->find();
+                        if (re) {
+                            $_POST['village_id'] = re['id'];
+                        }else{
+                            $this->error("请为此用户指定正确的村庄！");
+                        }
+                    }
+                }
                 $result = $this->validate($this->request->param(), 'User');
                 if ($result !== true) {
                     $this->error($result);
