@@ -34,15 +34,17 @@ class AdminOauthController extends AdminBaseController
         $oauthUserQuery = Db::name('wechat_user');
 
         $lists = $oauthUserQuery->paginate(10);
-        foreach ($lists as &$list) {
-            $village_id = $list['village'];
-            if ($village_id != 0) {
-                $que = Db::name('village')->where('id',$village_id)->find();
-                $list['village'] = $que['name'];
-            }
+        // foreach ($lists as &$list) {
+        //     $village_id = $list['village'];
+        //     if ($village_id != 0) {
+        //         $que = Db::name('village')->where('id',$village_id)->find();
+        //         $list['village'] = '测试上';
+        //     }
             
+        // }
+        // for ($i=0; $i < sizeof($lists) ; $i++) { 
+            $lists[$i]['village'] = '测试';
         }
-        unset($list);
         // 获取分页显示
         $page = $lists->render();
         $this->assign('lists', $lists);
