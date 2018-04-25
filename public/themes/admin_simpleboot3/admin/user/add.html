@@ -1,4 +1,15 @@
 <include file="public@header" />
+<style type="text/css">
+	.shRes{
+		background: #FFF;
+		color: #000;
+	}
+	.shResItem{
+		border: 1px solid #000;
+		height: 30px;
+		line-height: 30px;
+	}
+</style>
 </head>
 <body>
 	<div class="wrap">
@@ -39,6 +50,9 @@
 				<label for="input-user_email" class="col-sm-2 control-label"><span class="form-required">*</span>所属村庄</label>
 				<div class="col-md-6 col-sm-10">
 					<input type="text" class="form-control" id="village" name="user_belong" onkeyup="shVe()">
+					<div class="shRes" id="shRes">
+						
+					</div>
 				</div>
 			</div>
 			<div class="form-group">
@@ -52,6 +66,7 @@
 	<script type="text/javascript">
 		function shVe(){
 			var village = document.getElementById("village").value;
+			var oData = document.getElementById("shRes");
 			$.ajax({
 				url: 'http://tp.musiiot.top/admin/user/shVe',
 				method: 'POST',
@@ -60,7 +75,14 @@
 				},
 				dataType: 'json',
 				success: function(data){
-					console.log(data);
+					console.log(dat.msg);
+					res = data.msg;
+					if (res) {
+						for (var i = 0; i < res.length; i++) {
+							console.log(res[i].name);
+							oData.innerHtml += '<div class="shResItem">'+res[i].name+'</div>';
+						}
+					}
 				}
 			})
 		}
