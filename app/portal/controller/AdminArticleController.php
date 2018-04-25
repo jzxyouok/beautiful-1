@@ -20,6 +20,7 @@ use app\admin\model\ThemeModel;
 class AdminArticleController extends AdminBaseController
 {
     /**
+     *
      * 文章列表
      * @adminMenu(
      *     'name'   => '文章管理',
