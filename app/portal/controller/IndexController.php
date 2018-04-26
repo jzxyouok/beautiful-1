@@ -28,6 +28,7 @@ class IndexController extends HomeBaseController
                 $item['username'] = $user['user_login'];
                 $item['userimg'] = $user['avatar'];
                 $item['pimg'] = $item['more'];
+                $item['post_content'] = strtr($item['post_content'],array_filp(get_html_translation_table(HTML_ENTITIES)));
                 return $item;
             });
             $this->assign('article', $articles);
