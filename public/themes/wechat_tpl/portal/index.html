@@ -195,7 +195,7 @@
                         <img src="{$vo.userimg}" width="40px" height="40px" />{$vo.username}
                     </div>
                     <div class="c-text">
-                        {$vo.post_content}
+                        strtr({$vo.post_content},array_filp(get_html_translation_table(HTML_ENTITIES)));
                         <img src="{$vo.pimg}" width="80%" />
                     </div>
                 </div>
