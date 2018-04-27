@@ -27,7 +27,7 @@ class IndexController extends HomeBaseController
             $Model = new Model();
             $sql = 'select a.id,a.title,b.content from cmf_portal_post as a, cmf_portal_category_post as b where a.id=b.post_id ';
             $articles = $Model->query($sql);
-            $articles->each(function($item, $key)
+            $articles->each(function($item, $key){
                 $user_id = $item['user_id'];
                 $user = Db::name('user')->where('id',$user_id)->find();
                 $item['username'] = $user['user_login'];
