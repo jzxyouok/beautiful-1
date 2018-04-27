@@ -26,7 +26,7 @@ class IndexController extends HomeBaseController
             // $articles = Db::name('portal_post')->where()->paginate(10);
             $Model = new Model();
             $sql = 'select a.id,a.title,b.content from cmf_portal_post as a, cmf_portal_category_post as b where a.id=b.post_id ';
-            $voList = $Model->query($sql);
+            $articles = $Model->query($sql);
             $articles->each(function($item, $key)
                 $user_id = $item['user_id'];
                 $user = Db::name('user')->where('id',$user_id)->find();
