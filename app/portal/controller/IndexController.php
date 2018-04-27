@@ -13,6 +13,7 @@ namespace app\portal\controller;
 use cmf\controller\HomeBaseController;
 use app\wechat\model\UserModel;
 use think\Db;
+use think\Model;
 
 class IndexController extends HomeBaseController
 {
@@ -21,8 +22,12 @@ class IndexController extends HomeBaseController
     public function index()
     {
         if(session('openid', '', 'wechat') != ''){
-            $articles = Db::name('portal_post')->paginate(10);
-            $articles->each(function($item, $key){
+            //$list = $user->table('user_status stats, user_profile profile')->where('stats.id = profile.typeid')->field('stats.id as id, stats.display as display, profile.title as title,profile.content as content')->order('stats.id desc' )->select(); 
+            // $articles = Db::name('portal_post')->where()->paginate(10);
+            $Model = new Model();
+            $sql = 'select a.id,a.title,b.content from cmf_portal_post as a, cmf_portal_category_post as b where a.id=b.post_id ';
+            $voList = $Model->query($sql);
+            $articles->each(function($item, $key)
                 $user_id = $item['user_id'];
                 $user = Db::name('user')->where('id',$user_id)->find();
                 $item['username'] = $user['user_login'];
