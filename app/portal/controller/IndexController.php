@@ -33,6 +33,7 @@ class IndexController extends HomeBaseController
             //     $item['post_content'] = htmlspecialchars_decode($item['post_content']);
             //     return $item;
             // });
+            print_r($articles);
             $this->assign('article', $articles);
             return $this->fetch(':index');
         }else{
