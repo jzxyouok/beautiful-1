@@ -24,15 +24,15 @@ class IndexController extends HomeBaseController
             //$list = $user->table('user_status stats, user_profile profile')->where('stats.id = profile.typeid')->field('stats.id as id, stats.display as display, profile.title as title,profile.content as content')->order('stats.id desc' )->select(); 
             // $articles = Db::name('portal_post')->where()->paginate(10);
             $articles = Db::query('select * from cmf_portal_category_post,cmf_portal_post where cmf_portal_category_post.post_id=cmf_portal_post.id');
-            $articles->each(function($item, $key){
-                $user_id = $item['user_id'];
-                $user = Db::name('user')->where('id',$user_id)->find();
-                $item['username'] = $user['user_login'];
-                $item['userimg'] = $user['avatar'];
-                $item['pimg'] = $item['more'];
-                $item['post_content'] = htmlspecialchars_decode($item['post_content']);
-                return $item;
-            });
+            // $articles->each(function($item, $key){
+            //     $user_id = $item['user_id'];
+            //     $user = Db::name('user')->where('id',$user_id)->find();
+            //     $item['username'] = $user['user_login'];
+            //     $item['userimg'] = $user['avatar'];
+            //     $item['pimg'] = $item['more'];
+            //     $item['post_content'] = htmlspecialchars_decode($item['post_content']);
+            //     return $item;
+            // });
             $this->assign('article', $articles);
             return $this->fetch(':index');
         }else{
