@@ -21,9 +21,8 @@ class IndexController extends HomeBaseController
     public function index()
     {
         if(session('openid', '', 'wechat') != ''){
-            //$list = $user->table('user_status stats, user_profile profile')->where('stats.id = profile.typeid')->field('stats.id as id, stats.display as display, profile.title as title,profile.content as content')->order('stats.id desc' )->select(); 
             // $articles = Db::name('portal_post')->where()->paginate(10);
-            $articles = Db::query('select * from cmf_portal_category_post,cmf_portal_post,cmf_user where cmf_portal_category_post.post_id=cmf_portal_post.id and cmf_user.id=cmf_portal_post.user_id');
+            $articles = Db::query('select * from cmf_portal_category_post,cmf_portal_post,cmf_user where cmf_portal_category_post.post_id=cmf_portal_post.id and cmf_user.id=cmf_portal_post.user_id and category_id=1');
             // $articles->each(function($item, $key){
             //     $user_id = $item['user_id'];
             //     $user = Db::name('user')->where('id',$user_id)->find();
