@@ -210,6 +210,7 @@
 <include file="public@scripts"/>
 <script src="__TMPL__/public/assets/js/slippry.min.js"></script>
 <script>
+    var num = 0;
     $(function () {
         $("#home-slider").slippry({
             transition: 'fade',
@@ -222,30 +223,44 @@
         });
         $("#home-slider").show();
     });
+    function loadMore(){
+        num += 1;
+        $.ajax({
+            'url': 'loadMore',
+            'method': 'POST',
+            'data': {
+                'page': num
+            },
+            'dataType': 'json',
+            'success': function (data){
+                console.log(data);
+            }
+        })
+    }
 </script>
 <script type="text/javascript">
-    var num = 1;
-        var scollif = true;
-        $(document).ready(function(){
-            var range = 20;             //距下边界长度/单位px
-            var elemt = 280;            //插入元素高度/单位px
-            var maxnum = 1000;          //设置加载最多次数
-            var totalheight = 0;
-            var main = $(".wz-box");       //主体元素
-            $(window).scroll(function(){
-                //滚动条距顶部距离(页面超出窗口的高度)
-                var srollPos = $(window).scrollTop();    
-                totalheight = parseFloat($(window).height()) + parseFloat(srollPos);
-                //判断上拉的高度以决定是否加载更多
-                if(($(document).height()-range) <= totalheight  && num != maxnum) {
-                    if(scollif){
-                        console.log(11)
-                    }else {
-                        console.log(2)
-                    }
+    var scollif = true;
+    $(document).ready(function(){
+        var range = 20;             //距下边界长度/单位px
+        var elemt = 280;            //插入元素高度/单位px
+        var maxnum = 1000;          //设置加载最多次数
+        var totalheight = 0;
+        var main = $(".wz-box");       //主体元素
+        $(window).scroll(function(){
+            //滚动条距顶部距离(页面超出窗口的高度)
+            var srollPos = $(window).scrollTop();    
+            totalheight = parseFloat($(window).height()) + parseFloat(srollPos);
+            //判断上拉的高度以决定是否加载更多
+            if(($(document).height()-range) <= totalheight  && num != maxnum) {
+                if(scollif){
+                    console.log(11);
+                    loadMore();
+                }else {
+                    console.log(2)
                 }
-            });
+            }
         });
+    });
 </script>
 <hook name="before_body_end"/>
 </body>
