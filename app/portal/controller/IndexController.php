@@ -165,7 +165,7 @@ class IndexController extends HomeBaseController
         $offset = 5;
         $rows = 5;
         // echo $offset+($page-1)*5+'11';
-        $articles = Db::query('select * from cmf_portal_category_post,cmf_portal_post,cmf_user where cmf_portal_category_post.post_id=cmf_portal_post.id and cmf_user.id=cmf_portal_post.user_id and category_id=1 limit '+$offset+($page-1)*5+','+$rows);
+        $articles = Db::query('select * from cmf_portal_category_post,cmf_portal_post,cmf_user where cmf_portal_category_post.post_id=cmf_portal_post.id and cmf_user.id=cmf_portal_post.user_id and category_id=1 limit '+strval($offset+($page-1)*5)+','+strval($rows));
         for ($i=0; $i < sizeof($articles); $i++) { 
                 $articles[$i]['post_content'] = htmlspecialchars_decode($articles[$i]['post_content']);
             }
